@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<launchConfiguration type="org.lamport.tla.toolbox.tool.tlc.modelCheck">
+    <stringAttribute key="configurationName" value="model_single_SnapShot_1792235828585"/>
+    <intAttribute key="distributedFPSetCount" value="0"/>
+    <stringAttribute key="distributedNetworkInterface" value="192.168.1.243"/>
+    <intAttribute key="distributedNodesCount" value="1"/>
+    <stringAttribute key="distributedTLC" value="off"/>
+    <intAttribute key="fpIndex" value="23"/>
+    <intAttribute key="maxHeapSize" value="25"/>
+    <stringAttribute key="modelBehaviorInit" value=""/>
+    <stringAttribute key="modelBehaviorNext" value=""/>
+    <stringAttribute key="modelBehaviorSpec" value="Spec"/>
+    <intAttribute key="modelBehaviorSpecType" value="1"/>
+    <stringAttribute key="modelBehaviorVars" value="trapDoorOpen, truckRequested, binSensor, serverRequests, req_, ramExtended, trapDestroyed, userTrash, sRes, pc, serverResponses, permissions, req, outerDoorLocked, scans, binCommand, outerDoorOpen, truckCommand, perm, trashInTop, trashCompressed, trashUncompressed, trashCapacity"/>
+    <stringAttribute key="modelComments" value=""/>
+    <booleanAttribute key="modelCorrectnessCheckDeadlock" value="true"/>
+    <listAttribute key="modelCorrectnessInvariants">
+        <listEntry value="1TypeOK"/>
+        <listEntry value="1MessagesOK"/>
+        <listEntry value="1OuterDoorLocked"/>
+        <listEntry value="1RamOuterDoor"/>
+        <listEntry value="1AuthorizedOpenOnly"/>
+    </listAttribute>
+    <listAttribute key="modelCorrectnessProperties">
+        <listEntry value="1TrashEmptied"/>
+        <listEntry value="1UserTrash"/>
+        <listEntry value="1UserTrashDeposited"/>
+        <listEntry value="1TruckEmpties"/>
+    </listAttribute>
+    <intAttribute key="modelEditorOpenTabs" value="8"/>
+    <stringAttribute key="modelExpressionEval" value=""/>
+    <listAttribute key="modelParameterConstants">
+        <listEntry value="NumBins;;1;0;0"/>
+        <listEntry value="NumUsers;;1;0;0"/>
+        <listEntry value="NumTrucks;;1;0;0"/>
+        <listEntry value="MaxCapacity;;7;0;0"/>
+        <listEntry value="MaxUserTrash;;4;0;0"/>
+    </listAttribute>
+    <intAttribute key="modelVersion" value="20191005"/>
+    <intAttribute key="numberOfWorkers" value="8"/>
+    <stringAttribute key="result.mail.address" value=""/>
+    <stringAttribute key="specName" value="trash_bins"/>
+    <stringAttribute key="tlcResourcesProfile" value="local custom"/>
+</launchConfiguration>
