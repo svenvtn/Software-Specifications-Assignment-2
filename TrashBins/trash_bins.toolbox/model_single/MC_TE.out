@@ -2,7 +2,7 @@
 TLC2 Version 2.19 of 08 August 2024 (rev: 5a47802)
 @!@!@ENDMSG 2262 @!@!@
 @!@!@STARTMSG 2187:0 @!@!@
-Running breadth-first search Model-Checking with fp 23 and seed -6036883424914221318 with 8 workers on 16 cores with 2373MB heap and 5337MB offheap memory [pid: 13740] (Windows 10 10.0 amd64, AdoptOpenJDK 14.0.1 x86_64, OffHeapDiskFPSet, DiskStateQueue).
+Running breadth-first search Model-Checking with fp 55 and seed -351374316675767216 with 8 workers on 16 cores with 2373MB heap and 5337MB offheap memory [pid: 4512] (Windows 10 10.0 amd64, AdoptOpenJDK 14.0.1 x86_64, OffHeapDiskFPSet, DiskStateQueue).
 @!@!@ENDMSG 2187 @!@!@
 @!@!@STARTMSG 2220:0 @!@!@
 Starting SANY...
@@ -30,7 +30,7 @@ Semantic processing of module MC
 SANY finished.
 @!@!@ENDMSG 2219 @!@!@
 @!@!@STARTMSG 2185:0 @!@!@
-Starting... (2026-10-17 13:17:03)
+Starting... (2026-10-19 15:33:21)
 @!@!@ENDMSG 2185 @!@!@
 @!@!@STARTMSG 2212:0 @!@!@
 Implied-temporal checking--satisfiability problem has 4 branches.
@@ -39,16 +39,16 @@ Implied-temporal checking--satisfiability problem has 4 branches.
 Computing initial states...
 @!@!@ENDMSG 2189 @!@!@
 @!@!@STARTMSG 2190:0 @!@!@
-Finished computing initial states: 1 distinct state generated at 2026-10-17 13:17:04.
+Finished computing initial states: 1 distinct state generated at 2026-10-19 15:33:22.
 @!@!@ENDMSG 2190 @!@!@
 @!@!@STARTMSG 2200:0 @!@!@
-Progress(154) at 2026-10-17 13:17:05: 38.600 states generated, 14.058 distinct states found, 0 states left on queue.
+Progress(154) at 2026-10-19 15:33:24: 38.600 states generated, 14.058 distinct states found, 0 states left on queue.
 @!@!@ENDMSG 2200 @!@!@
 @!@!@STARTMSG 2192:0 @!@!@
-Checking 4 branches of temporal properties for the complete state space with 56232 total distinct states at (2026-10-17 13:17:05)
+Checking 4 branches of temporal properties for the complete state space with 56232 total distinct states at (2026-10-19 15:33:24)
 @!@!@ENDMSG 2192 @!@!@
 @!@!@STARTMSG 2267:0 @!@!@
-Finished checking temporal properties in 00s at 2026-10-17 13:17:06
+Finished checking temporal properties in 00s at 2026-10-19 15:33:24
 @!@!@ENDMSG 2267 @!@!@
 @!@!@STARTMSG 2193:0 @!@!@
 Model checking completed. No error has been found.
@@ -57,7 +57,7 @@ Model checking completed. No error has been found.
   calculated (optimistic):  val = 1.9E-11
 @!@!@ENDMSG 2193 @!@!@
 @!@!@STARTMSG 2201:0 @!@!@
-The coverage statistics at 2026-10-17 13:17:06
+The coverage statistics at 2026-10-19 15:33:24
 @!@!@ENDMSG 2201 @!@!@
 @!@!@STARTMSG 2773:0 @!@!@
 <Init line 483, col 1 to line 483, col 4 of module trash_single>: 1:1
@@ -66,19 +66,19 @@ The coverage statistics at 2026-10-17 13:17:06
   line 484, col 9 to line 514, col 76 of module trash_single: 1
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2772:0 @!@!@
-<BinWaitForCommand line 516, col 1 to line 516, col 23 of module trash_single>: 778:3076
+<BinWaitForCommand line 516, col 1 to line 516, col 23 of module trash_single>: 802:3076
 @!@!@ENDMSG 2772 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  line 516, col 31 to line 516, col 60 of module trash_single: 17236
+  line 516, col 31 to line 516, col 60 of module trash_single: 17239
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  |line 516, col 31 to line 516, col 38 of module trash_single: 14160
+  |line 516, col 31 to line 516, col 38 of module trash_single: 14163
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  line 517, col 31 to line 517, col 62 of module trash_single: 14788
+  line 517, col 31 to line 517, col 62 of module trash_single: 14791
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  |line 517, col 31 to line 517, col 48 of module trash_single: 11712
+  |line 517, col 31 to line 517, col 48 of module trash_single: 11715
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
   line 518, col 34 to line 518, col 73 of module trash_single: 3076
@@ -234,13 +234,13 @@ The coverage statistics at 2026-10-17 13:17:06
   line 596, col 31 to line 600, col 77 of module trash_single: 3076
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2772:0 @!@!@
-<BinCommandFinished line 602, col 1 to line 602, col 24 of module trash_single>: 711:2448
+<BinCommandFinished line 602, col 1 to line 602, col 24 of module trash_single>: 706:2448
 @!@!@ENDMSG 2772 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  line 602, col 32 to line 602, col 62 of module trash_single: 16608
+  line 602, col 32 to line 602, col 62 of module trash_single: 16611
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  |line 602, col 32 to line 602, col 39 of module trash_single: 14160
+  |line 602, col 32 to line 602, col 39 of module trash_single: 14163
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
   line 603, col 32 to line 603, col 87 of module trash_single: 2448
@@ -252,61 +252,61 @@ The coverage statistics at 2026-10-17 13:17:06
   line 605, col 32 to line 614, col 61 of module trash_single: 2448
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2772:0 @!@!@
-<UserNextIteration line 618, col 1 to line 618, col 23 of module trash_single>: 710:1270
+<UserNextIteration line 618, col 1 to line 618, col 23 of module trash_single>: 819:1272
 @!@!@ENDMSG 2772 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  line 618, col 31 to line 618, col 60 of module trash_single: 15430
+  line 618, col 31 to line 618, col 60 of module trash_single: 15435
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  |line 618, col 31 to line 618, col 38 of module trash_single: 14160
+  |line 618, col 31 to line 618, col 38 of module trash_single: 14163
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  line 619, col 34 to line 619, col 46 of module trash_single: 1270
+  line 619, col 34 to line 619, col 46 of module trash_single: 1272
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  line 620, col 39 to line 620, col 83 of module trash_single: 998
+  line 620, col 39 to line 620, col 83 of module trash_single: 1000
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
   line 621, col 39 to line 621, col 83 of module trash_single: 272
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  line 622, col 31 to line 631, col 66 of module trash_single: 1270
+  line 622, col 31 to line 631, col 66 of module trash_single: 1272
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2772:0 @!@!@
-<UserScanCard line 633, col 1 to line 633, col 18 of module trash_single>: 3524:4277
+<UserScanCard line 633, col 1 to line 633, col 18 of module trash_single>: 3851:4279
 @!@!@ENDMSG 2772 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  line 633, col 26 to line 633, col 50 of module trash_single: 18437
+  line 633, col 26 to line 633, col 50 of module trash_single: 18442
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  |line 633, col 26 to line 633, col 33 of module trash_single: 14160
+  |line 633, col 26 to line 633, col 33 of module trash_single: 14163
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  line 634, col 26 to line 634, col 77 of module trash_single: 4277
+  line 634, col 26 to line 634, col 77 of module trash_single: 4279
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  line 635, col 26 to line 635, col 76 of module trash_single: 4277
+  line 635, col 26 to line 635, col 76 of module trash_single: 4279
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  line 636, col 26 to line 643, col 72 of module trash_single: 4277
+  line 636, col 26 to line 643, col 72 of module trash_single: 4279
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2772:0 @!@!@
-<UserAwaitScanResponse line 645, col 1 to line 645, col 27 of module trash_single>: 152:640
+<UserAwaitScanResponse line 645, col 1 to line 645, col 27 of module trash_single>: 154:640
 @!@!@ENDMSG 2772 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  line 645, col 35 to line 645, col 68 of module trash_single: 14800
+  line 645, col 35 to line 645, col 68 of module trash_single: 14803
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  |line 645, col 35 to line 645, col 42 of module trash_single: 14160
+  |line 645, col 35 to line 645, col 42 of module trash_single: 14163
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  line 646, col 35 to line 646, col 53 of module trash_single: 6777
+  line 646, col 35 to line 646, col 53 of module trash_single: 6776
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  |line 646, col 35 to line 646, col 45 of module trash_single: 6137
+  |line 646, col 35 to line 646, col 45 of module trash_single: 6136
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  |line 646, col 50 to line 646, col 53 of module trash_single: 6137
+  |line 646, col 50 to line 646, col 53 of module trash_single: 6136
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
   line 647, col 35 to line 647, col 83 of module trash_single: 640
@@ -333,13 +333,13 @@ The coverage statistics at 2026-10-17 13:17:06
   line 656, col 35 to line 665, col 81 of module trash_single: 640
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2772:0 @!@!@
-<UserOpenDoor line 667, col 1 to line 667, col 18 of module trash_single>: 49:64
+<UserOpenDoor line 667, col 1 to line 667, col 18 of module trash_single>: 62:64
 @!@!@ENDMSG 2772 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  line 667, col 26 to line 667, col 50 of module trash_single: 14224
+  line 667, col 26 to line 667, col 50 of module trash_single: 14227
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  |line 667, col 26 to line 667, col 33 of module trash_single: 14160
+  |line 667, col 26 to line 667, col 33 of module trash_single: 14163
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
   line 668, col 26 to line 668, col 87 of module trash_single: 64
@@ -351,13 +351,13 @@ The coverage statistics at 2026-10-17 13:17:06
   line 670, col 26 to line 677, col 72 of module trash_single: 64
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2772:0 @!@!@
-<UserAwaitOpenDoor line 679, col 1 to line 679, col 23 of module trash_single>: 54:64
+<UserAwaitOpenDoor line 679, col 1 to line 679, col 23 of module trash_single>: 62:64
 @!@!@ENDMSG 2772 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  line 679, col 31 to line 679, col 60 of module trash_single: 14224
+  line 679, col 31 to line 679, col 60 of module trash_single: 14227
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  |line 679, col 31 to line 679, col 38 of module trash_single: 14160
+  |line 679, col 31 to line 679, col 38 of module trash_single: 14163
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
   line 680, col 31 to line 680, col 61 of module trash_single: 256
@@ -372,13 +372,13 @@ The coverage statistics at 2026-10-17 13:17:06
   line 682, col 31 to line 691, col 66 of module trash_single: 64
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2772:0 @!@!@
-<UserDepositTrash line 693, col 1 to line 693, col 22 of module trash_single>: 53:64
+<UserDepositTrash line 693, col 1 to line 693, col 22 of module trash_single>: 63:64
 @!@!@ENDMSG 2772 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  line 693, col 30 to line 693, col 58 of module trash_single: 14224
+  line 693, col 30 to line 693, col 58 of module trash_single: 14227
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  |line 693, col 30 to line 693, col 37 of module trash_single: 14160
+  |line 693, col 30 to line 693, col 37 of module trash_single: 14163
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
   line 694, col 30 to line 695, col 82 of module trash_single: 64
@@ -396,13 +396,13 @@ The coverage statistics at 2026-10-17 13:17:06
   line 699, col 30 to line 707, col 65 of module trash_single: 64
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2772:0 @!@!@
-<UserCloseDoor line 709, col 1 to line 709, col 19 of module trash_single>: 54:64
+<UserCloseDoor line 709, col 1 to line 709, col 19 of module trash_single>: 63:64
 @!@!@ENDMSG 2772 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  line 709, col 27 to line 709, col 52 of module trash_single: 14224
+  line 709, col 27 to line 709, col 52 of module trash_single: 14227
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  |line 709, col 27 to line 709, col 34 of module trash_single: 14160
+  |line 709, col 27 to line 709, col 34 of module trash_single: 14163
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
   line 710, col 27 to line 710, col 89 of module trash_single: 64
@@ -414,13 +414,13 @@ The coverage statistics at 2026-10-17 13:17:06
   line 712, col 27 to line 719, col 73 of module trash_single: 64
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2772:0 @!@!@
-<UserAwaitClosedDoor line 721, col 1 to line 721, col 25 of module trash_single>: 258:550
+<UserAwaitClosedDoor line 721, col 1 to line 721, col 25 of module trash_single>: 305:550
 @!@!@ENDMSG 2772 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  line 721, col 33 to line 721, col 64 of module trash_single: 14710
+  line 721, col 33 to line 721, col 64 of module trash_single: 14713
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  |line 721, col 33 to line 721, col 40 of module trash_single: 14160
+  |line 721, col 33 to line 721, col 40 of module trash_single: 14163
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
   line 722, col 33 to line 722, col 63 of module trash_single: 1657
@@ -435,13 +435,13 @@ The coverage statistics at 2026-10-17 13:17:06
   line 724, col 33 to line 733, col 68 of module trash_single: 550
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2772:0 @!@!@
-<UserNewTrash line 735, col 1 to line 735, col 18 of module trash_single>: 3186:3940
+<UserNewTrash line 735, col 1 to line 735, col 18 of module trash_single>: 3542:3940
 @!@!@ENDMSG 2772 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  line 735, col 26 to line 735, col 50 of module trash_single: 15145
+  line 735, col 26 to line 735, col 50 of module trash_single: 15148
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  |line 735, col 26 to line 735, col 33 of module trash_single: 14160
+  |line 735, col 26 to line 735, col 33 of module trash_single: 14163
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
   line 737, col 28 to line 737, col 43 of module trash_single: 3940
@@ -456,37 +456,37 @@ The coverage statistics at 2026-10-17 13:17:06
   line 739, col 26 to line 746, col 72 of module trash_single: 3940
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2772:0 @!@!@
-<ServerNextIteration line 754, col 1 to line 754, col 19 of module trash_single>: 95:7117
+<ServerNextIteration line 754, col 1 to line 754, col 19 of module trash_single>: 96:7110
 @!@!@ENDMSG 2772 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  line 754, col 27 to line 754, col 60 of module trash_single: 21277
+  line 754, col 27 to line 754, col 60 of module trash_single: 21273
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  |line 754, col 27 to line 754, col 36 of module trash_single: 14160
+  |line 754, col 27 to line 754, col 36 of module trash_single: 14163
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  line 755, col 27 to line 755, col 76 of module trash_single: 7117
+  line 755, col 27 to line 755, col 76 of module trash_single: 7110
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  line 756, col 27 to line 764, col 56 of module trash_single: 7117
+  line 756, col 27 to line 764, col 56 of module trash_single: 7110
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2772:0 @!@!@
-<ServerAwaitRequest line 766, col 1 to line 766, col 18 of module trash_single>: 91:168
+<ServerAwaitRequest line 766, col 1 to line 766, col 18 of module trash_single>: 96:168
 @!@!@ENDMSG 2772 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  line 766, col 26 to line 766, col 58 of module trash_single: 14328
+  line 766, col 26 to line 766, col 58 of module trash_single: 14331
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  |line 766, col 26 to line 766, col 35 of module trash_single: 14160
+  |line 766, col 26 to line 766, col 35 of module trash_single: 14163
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  line 767, col 26 to line 767, col 47 of module trash_single: 7211
+  line 767, col 26 to line 767, col 47 of module trash_single: 7221
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  |line 767, col 26 to line 767, col 39 of module trash_single: 7043
+  |line 767, col 26 to line 767, col 39 of module trash_single: 7053
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  |line 767, col 44 to line 767, col 47 of module trash_single: 7043
+  |line 767, col 44 to line 767, col 47 of module trash_single: 7053
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
   line 768, col 26 to line 768, col 53 of module trash_single: 168
@@ -504,34 +504,34 @@ The coverage statistics at 2026-10-17 13:17:06
   line 773, col 26 to line 780, col 55 of module trash_single: 168
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2772:0 @!@!@
-<TruckStart line 784, col 1 to line 784, col 16 of module trash_single>: 1430:6449
+<TruckStart line 784, col 1 to line 784, col 16 of module trash_single>: 428:6453
 @!@!@ENDMSG 2772 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  line 784, col 24 to line 784, col 46 of module trash_single: 20609
+  line 784, col 24 to line 784, col 46 of module trash_single: 20616
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  |line 784, col 24 to line 784, col 31 of module trash_single: 14160
+  |line 784, col 24 to line 784, col 31 of module trash_single: 14163
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  line 785, col 24 to line 785, col 64 of module trash_single: 6449
+  line 785, col 24 to line 785, col 64 of module trash_single: 6453
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  line 786, col 24 to line 793, col 64 of module trash_single: 6449
+  line 786, col 24 to line 793, col 64 of module trash_single: 6453
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2772:0 @!@!@
-<WaitRequest line 795, col 1 to line 795, col 17 of module trash_single>: 99:300
+<WaitRequest line 795, col 1 to line 795, col 17 of module trash_single>: 161:300
 @!@!@ENDMSG 2772 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  line 795, col 25 to line 795, col 48 of module trash_single: 14460
+  line 795, col 25 to line 795, col 48 of module trash_single: 14463
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  |line 795, col 25 to line 795, col 32 of module trash_single: 14160
+  |line 795, col 25 to line 795, col 32 of module trash_single: 14163
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  line 796, col 25 to line 796, col 56 of module trash_single: 6661
+  line 796, col 25 to line 796, col 56 of module trash_single: 6660
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  |line 796, col 25 to line 796, col 44 of module trash_single: 6361
+  |line 796, col 25 to line 796, col 44 of module trash_single: 6360
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
   line 797, col 25 to line 797, col 61 of module trash_single: 300
@@ -540,13 +540,13 @@ The coverage statistics at 2026-10-17 13:17:06
   line 798, col 25 to line 805, col 65 of module trash_single: 300
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2772:0 @!@!@
-<Arrived line 807, col 1 to line 807, col 13 of module trash_single>: 219:300
+<Arrived line 807, col 1 to line 807, col 13 of module trash_single>: 233:300
 @!@!@ENDMSG 2772 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  line 807, col 21 to line 807, col 40 of module trash_single: 14460
+  line 807, col 21 to line 807, col 40 of module trash_single: 14463
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  |line 807, col 21 to line 807, col 28 of module trash_single: 14160
+  |line 807, col 21 to line 807, col 28 of module trash_single: 14163
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
   line 808, col 21 to line 808, col 70 of module trash_single: 300
@@ -558,13 +558,13 @@ The coverage statistics at 2026-10-17 13:17:06
   line 810, col 21 to line 816, col 61 of module trash_single: 300
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2772:0 @!@!@
-<EmptyBin line 818, col 1 to line 818, col 14 of module trash_single>: 273:300
+<EmptyBin line 818, col 1 to line 818, col 14 of module trash_single>: 263:300
 @!@!@ENDMSG 2772 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  line 818, col 22 to line 818, col 42 of module trash_single: 14460
+  line 818, col 22 to line 818, col 42 of module trash_single: 14463
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  |line 818, col 22 to line 818, col 29 of module trash_single: 14160
+  |line 818, col 22 to line 818, col 29 of module trash_single: 14163
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
   line 819, col 22 to line 819, col 72 of module trash_single: 300
@@ -576,13 +576,13 @@ The coverage statistics at 2026-10-17 13:17:06
   line 821, col 22 to line 827, col 62 of module trash_single: 300
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2772:0 @!@!@
-<WaitEmptyBin line 829, col 1 to line 829, col 18 of module trash_single>: 140:150
+<WaitEmptyBin line 829, col 1 to line 829, col 18 of module trash_single>: 137:150
 @!@!@ENDMSG 2772 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  line 829, col 26 to line 829, col 50 of module trash_single: 14310
+  line 829, col 26 to line 829, col 50 of module trash_single: 14313
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  |line 829, col 26 to line 829, col 33 of module trash_single: 14160
+  |line 829, col 26 to line 829, col 33 of module trash_single: 14163
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
   line 830, col 26 to line 830, col 56 of module trash_single: 750
@@ -597,13 +597,13 @@ The coverage statistics at 2026-10-17 13:17:06
   line 832, col 26 to line 840, col 55 of module trash_single: 150
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2772:0 @!@!@
-<Emptied line 842, col 1 to line 842, col 13 of module trash_single>: 144:150
+<Emptied line 842, col 1 to line 842, col 13 of module trash_single>: 138:150
 @!@!@ENDMSG 2772 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  line 842, col 21 to line 842, col 40 of module trash_single: 14310
+  line 842, col 21 to line 842, col 40 of module trash_single: 14313
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  |line 842, col 21 to line 842, col 28 of module trash_single: 14160
+  |line 842, col 21 to line 842, col 28 of module trash_single: 14163
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
   line 843, col 21 to line 843, col 70 of module trash_single: 150
@@ -615,13 +615,13 @@ The coverage statistics at 2026-10-17 13:17:06
   line 845, col 21 to line 851, col 61 of module trash_single: 150
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2772:0 @!@!@
-<ControlStart line 857, col 1 to line 857, col 12 of module trash_single>: 238:1002
+<ControlStart line 857, col 1 to line 857, col 12 of module trash_single>: 226:1002
 @!@!@ENDMSG 2772 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  line 857, col 20 to line 857, col 47 of module trash_single: 15162
+  line 857, col 20 to line 857, col 47 of module trash_single: 15165
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  |line 857, col 20 to line 857, col 30 of module trash_single: 14160
+  |line 857, col 20 to line 857, col 30 of module trash_single: 14163
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
   line 858, col 23 to line 858, col 73 of module trash_single: 1002
@@ -648,19 +648,19 @@ The coverage statistics at 2026-10-17 13:17:06
   line 864, col 20 to line 870, col 44 of module trash_single: 1002
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2772:0 @!@!@
-<WaitEvent line 872, col 1 to line 872, col 9 of module trash_single>: 255:428
+<WaitEvent line 872, col 1 to line 872, col 9 of module trash_single>: 239:428
 @!@!@ENDMSG 2772 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  line 872, col 17 to line 872, col 41 of module trash_single: 14588
+  line 872, col 17 to line 872, col 41 of module trash_single: 14591
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  |line 872, col 17 to line 872, col 27 of module trash_single: 14160
+  |line 872, col 17 to line 872, col 27 of module trash_single: 14163
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  line 873, col 23 to line 873, col 54 of module trash_single: 1363
+  line 873, col 23 to line 873, col 54 of module trash_single: 1367
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  |line 873, col 23 to line 873, col 42 of module trash_single: 1239
+  |line 873, col 23 to line 873, col 42 of module trash_single: 1243
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
   line 873, col 59 to line 873, col 72 of module trash_single: 124
@@ -675,25 +675,25 @@ The coverage statistics at 2026-10-17 13:17:06
   line 876, col 23 to line 876, col 62 of module trash_single: 124
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  line 877, col 23 to line 877, col 75 of module trash_single: 1543
+  line 877, col 23 to line 877, col 75 of module trash_single: 1547
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  |line 877, col 25 to line 877, col 74 of module trash_single: 1239
+  |line 877, col 25 to line 877, col 74 of module trash_single: 1243
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  ||line 877, col 25 to line 877, col 56 of module trash_single: 1239
+  ||line 877, col 25 to line 877, col 56 of module trash_single: 1243
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  ||line 877, col 61 to line 877, col 74 of module trash_single: 431
+  ||line 877, col 61 to line 877, col 74 of module trash_single: 435
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  line 878, col 23 to line 878, col 35 of module trash_single: 1419
+  line 878, col 23 to line 878, col 35 of module trash_single: 1423
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  |line 878, col 23 to line 878, col 27 of module trash_single: 1115
+  |line 878, col 23 to line 878, col 27 of module trash_single: 1119
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  |line 878, col 32 to line 878, col 35 of module trash_single: 1115
+  |line 878, col 32 to line 878, col 35 of module trash_single: 1119
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
   line 879, col 23 to line 879, col 40 of module trash_single: 304
@@ -714,43 +714,43 @@ The coverage statistics at 2026-10-17 13:17:06
   line 884, col 17 to line 889, col 48 of module trash_single: 428
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2772:0 @!@!@
-<WaitServer line 891, col 1 to line 891, col 10 of module trash_single>: 190:337
+<WaitServer line 891, col 1 to line 891, col 10 of module trash_single>: 197:336
 @!@!@ENDMSG 2772 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  line 891, col 18 to line 891, col 43 of module trash_single: 14497
+  line 891, col 18 to line 891, col 43 of module trash_single: 14499
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  |line 891, col 18 to line 891, col 28 of module trash_single: 14160
+  |line 891, col 18 to line 891, col 28 of module trash_single: 14163
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  line 892, col 18 to line 892, col 40 of module trash_single: 1010
+  line 892, col 18 to line 892, col 40 of module trash_single: 1008
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  |line 892, col 18 to line 892, col 32 of module trash_single: 673
+  |line 892, col 18 to line 892, col 32 of module trash_single: 672
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  |line 892, col 37 to line 892, col 40 of module trash_single: 673
+  |line 892, col 37 to line 892, col 40 of module trash_single: 672
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  line 893, col 18 to line 893, col 46 of module trash_single: 337
+  line 893, col 18 to line 893, col 46 of module trash_single: 336
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  line 894, col 18 to line 894, col 57 of module trash_single: 337
+  line 894, col 18 to line 894, col 57 of module trash_single: 336
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  line 895, col 18 to line 895, col 65 of module trash_single: 337
+  line 895, col 18 to line 895, col 65 of module trash_single: 336
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  line 896, col 18 to line 901, col 81 of module trash_single: 337
+  line 896, col 18 to line 901, col 81 of module trash_single: 336
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2772:0 @!@!@
-<CheckPermission line 903, col 1 to line 903, col 15 of module trash_single>: 198:336
+<CheckPermission line 903, col 1 to line 903, col 15 of module trash_single>: 212:336
 @!@!@ENDMSG 2772 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  line 903, col 23 to line 903, col 53 of module trash_single: 14496
+  line 903, col 23 to line 903, col 53 of module trash_single: 14499
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  |line 903, col 23 to line 903, col 33 of module trash_single: 14160
+  |line 903, col 23 to line 903, col 33 of module trash_single: 14163
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
   line 904, col 26 to line 904, col 94 of module trash_single: 336
@@ -783,13 +783,13 @@ The coverage statistics at 2026-10-17 13:17:06
   line 911, col 23 to line 918, col 52 of module trash_single: 336
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2772:0 @!@!@
-<WaitUserUnlock line 920, col 1 to line 920, col 14 of module trash_single>: 74:96
+<WaitUserUnlock line 920, col 1 to line 920, col 14 of module trash_single>: 90:96
 @!@!@ENDMSG 2772 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  line 920, col 22 to line 920, col 51 of module trash_single: 14256
+  line 920, col 22 to line 920, col 51 of module trash_single: 14259
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  |line 920, col 22 to line 920, col 32 of module trash_single: 14160
+  |line 920, col 22 to line 920, col 32 of module trash_single: 14163
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
   line 921, col 22 to line 921, col 52 of module trash_single: 384
@@ -810,13 +810,13 @@ The coverage statistics at 2026-10-17 13:17:06
   line 925, col 22 to line 931, col 62 of module trash_single: 96
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2772:0 @!@!@
-<WaitDoorClose line 933, col 1 to line 933, col 13 of module trash_single>: 73:768
+<WaitDoorClose line 933, col 1 to line 933, col 13 of module trash_single>: 100:768
 @!@!@ENDMSG 2772 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  line 933, col 21 to line 933, col 49 of module trash_single: 14928
+  line 933, col 21 to line 933, col 49 of module trash_single: 14931
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  |line 933, col 21 to line 933, col 31 of module trash_single: 14160
+  |line 933, col 21 to line 933, col 31 of module trash_single: 14163
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
   line 934, col 21 to line 934, col 58 of module trash_single: 2144
@@ -843,13 +843,13 @@ The coverage statistics at 2026-10-17 13:17:06
   line 938, col 21 to line 944, col 50 of module trash_single: 768
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2772:0 @!@!@
-<LockOuterDoor line 946, col 1 to line 946, col 13 of module trash_single>: 128:704
+<LockOuterDoor line 946, col 1 to line 946, col 13 of module trash_single>: 151:704
 @!@!@ENDMSG 2772 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  line 946, col 21 to line 946, col 49 of module trash_single: 14864
+  line 946, col 21 to line 946, col 49 of module trash_single: 14867
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  |line 946, col 21 to line 946, col 31 of module trash_single: 14160
+  |line 946, col 21 to line 946, col 31 of module trash_single: 14163
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
   line 947, col 21 to line 947, col 83 of module trash_single: 704
@@ -861,13 +861,13 @@ The coverage statistics at 2026-10-17 13:17:06
   line 949, col 21 to line 955, col 61 of module trash_single: 704
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2772:0 @!@!@
-<WaitLockOuterDoor line 957, col 1 to line 957, col 17 of module trash_single>: 135:704
+<WaitLockOuterDoor line 957, col 1 to line 957, col 17 of module trash_single>: 123:704
 @!@!@ENDMSG 2772 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  line 957, col 25 to line 957, col 57 of module trash_single: 14864
+  line 957, col 25 to line 957, col 57 of module trash_single: 14867
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  |line 957, col 25 to line 957, col 35 of module trash_single: 14160
+  |line 957, col 25 to line 957, col 35 of module trash_single: 14163
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
   line 958, col 25 to line 958, col 55 of module trash_single: 2816
@@ -882,13 +882,13 @@ The coverage statistics at 2026-10-17 13:17:06
   line 960, col 25 to line 967, col 65 of module trash_single: 704
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2772:0 @!@!@
-<OpenTrapDoor line 969, col 1 to line 969, col 12 of module trash_single>: 162:704
+<OpenTrapDoor line 969, col 1 to line 969, col 12 of module trash_single>: 172:704
 @!@!@ENDMSG 2772 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  line 969, col 20 to line 969, col 47 of module trash_single: 14864
+  line 969, col 20 to line 969, col 47 of module trash_single: 14867
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  |line 969, col 20 to line 969, col 30 of module trash_single: 14160
+  |line 969, col 20 to line 969, col 30 of module trash_single: 14163
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
   line 970, col 20 to line 970, col 80 of module trash_single: 704
@@ -900,13 +900,13 @@ The coverage statistics at 2026-10-17 13:17:06
   line 972, col 20 to line 978, col 55 of module trash_single: 704
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2772:0 @!@!@
-<WaitOpenTrap line 980, col 1 to line 980, col 12 of module trash_single>: 127:704
+<WaitOpenTrap line 980, col 1 to line 980, col 12 of module trash_single>: 133:704
 @!@!@ENDMSG 2772 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  line 980, col 20 to line 980, col 47 of module trash_single: 14864
+  line 980, col 20 to line 980, col 47 of module trash_single: 14867
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  |line 980, col 20 to line 980, col 30 of module trash_single: 14160
+  |line 980, col 20 to line 980, col 30 of module trash_single: 14163
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
   line 981, col 20 to line 981, col 50 of module trash_single: 2822
@@ -921,13 +921,13 @@ The coverage statistics at 2026-10-17 13:17:06
   line 983, col 20 to line 989, col 72 of module trash_single: 704
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2772:0 @!@!@
-<ExtendRam line 991, col 1 to line 991, col 9 of module trash_single>: 163:704
+<ExtendRam line 991, col 1 to line 991, col 9 of module trash_single>: 164:704
 @!@!@ENDMSG 2772 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  line 991, col 17 to line 991, col 41 of module trash_single: 14864
+  line 991, col 17 to line 991, col 41 of module trash_single: 14867
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  |line 991, col 17 to line 991, col 27 of module trash_single: 14160
+  |line 991, col 17 to line 991, col 27 of module trash_single: 14163
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
   line 992, col 17 to line 992, col 71 of module trash_single: 704
@@ -939,13 +939,13 @@ The coverage statistics at 2026-10-17 13:17:06
   line 994, col 17 to line 1000, col 46 of module trash_single: 704
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2772:0 @!@!@
-<WaitExtendRam line 1002, col 1 to line 1002, col 13 of module trash_single>: 54:220
+<WaitExtendRam line 1002, col 1 to line 1002, col 13 of module trash_single>: 51:220
 @!@!@ENDMSG 2772 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  line 1002, col 21 to line 1002, col 49 of module trash_single: 14380
+  line 1002, col 21 to line 1002, col 49 of module trash_single: 14383
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  |line 1002, col 21 to line 1002, col 31 of module trash_single: 14160
+  |line 1002, col 21 to line 1002, col 31 of module trash_single: 14163
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
   line 1003, col 21 to line 1003, col 51 of module trash_single: 1364
@@ -960,13 +960,13 @@ The coverage statistics at 2026-10-17 13:17:06
   line 1005, col 21 to line 1012, col 50 of module trash_single: 220
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2772:0 @!@!@
-<RetractRam line 1014, col 1 to line 1014, col 10 of module trash_single>: 60:220
+<RetractRam line 1014, col 1 to line 1014, col 10 of module trash_single>: 68:220
 @!@!@ENDMSG 2772 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  line 1014, col 18 to line 1014, col 43 of module trash_single: 14380
+  line 1014, col 18 to line 1014, col 43 of module trash_single: 14383
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  |line 1014, col 18 to line 1014, col 28 of module trash_single: 14160
+  |line 1014, col 18 to line 1014, col 28 of module trash_single: 14163
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
   line 1015, col 18 to line 1015, col 73 of module trash_single: 220
@@ -978,13 +978,13 @@ The coverage statistics at 2026-10-17 13:17:06
   line 1017, col 18 to line 1023, col 47 of module trash_single: 220
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2772:0 @!@!@
-<WaitRetractRam line 1025, col 1 to line 1025, col 14 of module trash_single>: 54:220
+<WaitRetractRam line 1025, col 1 to line 1025, col 14 of module trash_single>: 47:220
 @!@!@ENDMSG 2772 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  line 1025, col 22 to line 1025, col 51 of module trash_single: 14380
+  line 1025, col 22 to line 1025, col 51 of module trash_single: 14383
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  |line 1025, col 22 to line 1025, col 32 of module trash_single: 14160
+  |line 1025, col 22 to line 1025, col 32 of module trash_single: 14163
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
   line 1026, col 22 to line 1026, col 52 of module trash_single: 880
@@ -999,13 +999,13 @@ The coverage statistics at 2026-10-17 13:17:06
   line 1028, col 22 to line 1035, col 62 of module trash_single: 220
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2772:0 @!@!@
-<CloseTrapDoor line 1037, col 1 to line 1037, col 13 of module trash_single>: 65:220
+<CloseTrapDoor line 1037, col 1 to line 1037, col 13 of module trash_single>: 51:220
 @!@!@ENDMSG 2772 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  line 1037, col 21 to line 1037, col 49 of module trash_single: 14380
+  line 1037, col 21 to line 1037, col 49 of module trash_single: 14383
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  |line 1037, col 21 to line 1037, col 31 of module trash_single: 14160
+  |line 1037, col 21 to line 1037, col 31 of module trash_single: 14163
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
   line 1038, col 21 to line 1038, col 82 of module trash_single: 220
@@ -1017,13 +1017,13 @@ The coverage statistics at 2026-10-17 13:17:06
   line 1040, col 21 to line 1046, col 61 of module trash_single: 220
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2772:0 @!@!@
-<WaitCloseTrap line 1048, col 1 to line 1048, col 13 of module trash_single>: 61:220
+<WaitCloseTrap line 1048, col 1 to line 1048, col 13 of module trash_single>: 52:220
 @!@!@ENDMSG 2772 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  line 1048, col 21 to line 1048, col 49 of module trash_single: 14380
+  line 1048, col 21 to line 1048, col 49 of module trash_single: 14383
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  |line 1048, col 21 to line 1048, col 31 of module trash_single: 14160
+  |line 1048, col 21 to line 1048, col 31 of module trash_single: 14163
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
   line 1049, col 21 to line 1049, col 51 of module trash_single: 880
@@ -1170,7 +1170,7 @@ The coverage statistics at 2026-10-17 13:17:06
 End of statistics.
 @!@!@ENDMSG 2202 @!@!@
 @!@!@STARTMSG 2200:0 @!@!@
-Progress(154) at 2026-10-17 13:17:07: 38.600 states generated (519.282 s/min), 14.058 distinct states found (189.121 ds/min), 0 states left on queue.
+Progress(154) at 2026-10-19 15:33:25: 38.600 states generated (460.712 s/min), 14.058 distinct states found (167.789 ds/min), 0 states left on queue.
 @!@!@ENDMSG 2200 @!@!@
 @!@!@STARTMSG 2199:0 @!@!@
 38600 states generated, 14058 distinct states found, 0 states left on queue.
@@ -1182,5 +1182,5 @@ The depth of the complete state graph search is 154.
 The average outdegree of the complete state graph is 1 (minimum is 0, the maximum 6 and the 95th percentile is 4).
 @!@!@ENDMSG 2268 @!@!@
 @!@!@STARTMSG 2186:0 @!@!@
-Finished in 4468ms at (2026-10-17 13:17:07)
+Finished in 5053ms at (2026-10-19 15:33:25)
 @!@!@ENDMSG 2186 @!@!@
