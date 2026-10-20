@@ -5,11 +5,7 @@ EXTENDS trash_data
 
 (* --algorithm trash_bins
 
-\*****************************
-\* Define global variables
-\*****************************
 variables
-  \* Variables for trash bin
   outerDoorOpen = FALSE,
   outerDoorLocked = TRUE,
   trapDoorOpen = FALSE,
@@ -20,42 +16,23 @@ variables
   trashCapacity = MaxCapacity,
   trapDestroyed = FALSE,
 
-  \* Variable for user
   userTrash = 0,
 
-  \* Command for bin
-  \* for command "change_outer_lock", open->TRUE means unlocked and open->FALSE means locked
-  \* for command "change_ram", open->TRUE means ram extended and open->FALSE means ram retracted
   binCommand = [command |-> "finished", open |-> FALSE],
-  \* Sensor from bin
   binSensor = [sensor |-> "idle"],
-  \* Central scan requests of all users
   scans = << >>,
-  \* Permissions per user
   permissions = << >>,
-  \* Requests to/from server
   serverRequests = << >>,
   serverResponses = << >>,
-  \* Command for the truck
   truckCommand = [command |-> "emptied", bin |-> 1];
-  \* CUSTOM: Command for authorized users
   authorizedUsers = [u \in Users |-> FALSE];
 
 define
 
-\*****************************
-\* Helper functions
-\*****************************
-\* You are free to add your own helper functions here.
 Trash == trashCompressed + trashUncompressed
 CapacityExceeded == Trash > trashCapacity
 TrashFitsCapacity(trash) == Trash + trash <= trashCapacity
 
-
-\*****************************
-\* Type checks
-\*****************************
-\* Check that variables use the correct type
 TypeOK == /\ outerDoorOpen \in BOOLEAN
           /\ outerDoorLocked \in BOOLEAN
           /\ trapDoorOpen \in BOOLEAN
@@ -84,16 +61,11 @@ TypeOK == /\ outerDoorOpen \in BOOLEAN
           /\ truckCommand.command \in TruckCommand
           /\ truckCommand.bin \in Bins
 
-\* Check that message queues are not overflowing
 MessagesOK == /\ Len(scans) <= 1
               /\ Len(permissions) <= 1
               /\ Len(serverRequests) <= 1
               /\ Len(serverResponses) <= 1
 
-
-\*****************************
-\* Sanity checks (already given, feel free to use them)
-\*****************************
 CapacitiesRespected == /\ trashUncompressed >= 0
                        /\ trashUncompressed <= trashCapacity
                        /\ trashCompressed >= 0
@@ -103,98 +75,65 @@ CapacitiesRespected == /\ trashUncompressed >= 0
 TrapNotDestroyed == ~trapDestroyed
 CapacityNotExceeded == ~CapacityExceeded
 
-
-\*****************************
-\* Properties of interest
-\*****************************
-\* Replace FALSE by your own formalisation of each property.
-
-\* The outer door can only be locked if it is closed.
 OuterDoorLocked == outerDoorLocked => ~outerDoorOpen
-\* The vertical ram is only used when the outer door is closed and locked.
 RamOuterDoor == ramExtended => (~outerDoorOpen /\ outerDoorLocked)
-\* Every time the trash bin is full, it is eventually not full anymore.
 TrashEmptied == [](~TrashFitsCapacity(MaxUserTrash) => <>(Trash = 0))
-\* An unauthorized user cannot open the outer door.
 AuthorizedOpenOnly == outerDoorOpen => \E u \in Users : authorizedUsers[u]
-\* The user infinitely often has trash and infinitely often has no trash.
 UserTrash == []<>(userTrash > 0) /\ []<>(userTrash = 0)
-\* Every time the user has trash, they can deposit their trash.
 UserTrashDeposited == []((userTrash > 0) => <>(userTrash = 0))
-\* Every time the truck is requested for the trash bin, the truck has eventually emptied the bin.
 TruckEmpties == []((truckCommand.command = "request") => <>(truckCommand.command = "emptied"))
 
 end define;
 
-
-\*****************************
-\* Helper macros
-\*****************************
-
-\* Compress trash
 macro compress(compressed, uncompressed) begin
   compressed := compressed + IF (uncompressed > 1) THEN uncompressed \div 2 ELSE uncompressed;
   uncompressed := 0;
 end macro
 
-\* Read res from queue.
-\* The macro awaits a non-empty queue.
 macro read(queue, res) begin
   await queue /= <<>>;
   res := Head(queue);
   queue := Tail(queue);
 end macro
 
-\* Write msg to the queue.
 macro write(queue, msg) begin
   queue := Append(queue, msg);
 end macro
 
-
-\*****************************
-\* Process for a bin
-\*****************************
 fair process binProcess \in Bins
 begin
   BinWaitForCommand:
     while TRUE do
       await binCommand.command /= "finished";
       if binCommand.command = "change_outer_door" then
-        \* Open/Close outer door
         assert ~outerDoorLocked;
         outerDoorOpen := binCommand.open;
         if ~outerDoorOpen then
           binSensor := [sensor |-> "outer_door_closed"];
         end if
       elsif binCommand.command = "change_outer_lock" then
-        \* Lock/Unlock outer door
         assert ~outerDoorOpen;
         outerDoorLocked := ~(binCommand.open);
       elsif binCommand.command = "change_trap_door" then
         assert outerDoorLocked;
-        \* Open/Close trap door
         if ramExtended \/ CapacityExceeded then
             trapDestroyed := TRUE;
         end if;
         trapDoorOpen := binCommand.open;
         if trapDoorOpen then
-          \* Trash falls through
           trashUncompressed := trashUncompressed + trashInTop;
           trashInTop := 0;
         end if
       elsif binCommand.command = "change_ram" then
         assert outerDoorLocked;
-        \* Extend/Retract ram
         ramExtended := binCommand.open;
         if ramExtended then
           if ~trapDoorOpen then
             trapDestroyed := TRUE;
           end if;
-          \* Compress trash
           compress(trashCompressed, trashUncompressed);
         end if;
       elsif binCommand.command = "empty" then
-        \* Empty trash bin
         assert outerDoorLocked;
         assert ~trapDoorOpen;
         assert ~ramExtended;
@@ -202,7 +141,6 @@ begin
         assert trashUncompressed = 0;
         trashCompressed := 0;
       else
-        \* should not happen
         assert FALSE;
       end if;
   BinCommandFinished:
@@ -210,10 +148,6 @@ begin
     end while;
 end process;
 
-
-\*****************************
-\* Process for a user
-\*****************************
 fair process userProcess \in Users
 variables
   perm = [user |-> 0, bin |-> 0, granted |-> FALSE]
@@ -249,10 +183,6 @@ begin
     end while;
 end process;
 
-
-\*****************************
-\* Process for a server
-\*****************************
 fair process serverProcess = Server
 variables
   req = [user |-> 0]
@@ -267,12 +197,6 @@ begin
     end while;
 end process;
 
-
-\*****************************
-\* Process for a truck
-\*****************************
-\* DUMMY truck process type.
-\* Remodel it to react to requests and empty the trash bin!
 fair process truckProcess \in Trucks
 begin
 TruckStart:
@@ -294,11 +218,6 @@ TruckStart:
     end while;
 end process
 
-\*****************************
-\* Process for the controller
-\*****************************
-\* DUMMY main control process type.
-\* Remodel it to control the trash bin system and handle requests by users!
 fair process controlProcess = Control
 variables
     req = [user |-> 0, bin |-> 0],
@@ -307,20 +226,16 @@ variables
 begin
 ControlStart:
     while TRUE do
-        \* 1. Automatically check capacity and request a truck FIRST
         if ~TrashFitsCapacity(MaxUserTrash) /\ ~truckRequested then
             truckCommand := [command |-> "request", bin |-> 1];
             truckRequested := TRUE;
         end if;
         
-        \* 2. Wait for incoming events (user scans or truck completion)
         WaitEvent:
         either
-            \* Acknowledge emptied truck
             await truckCommand.command = "emptied" /\ truckRequested;
             truckRequested := FALSE;
         or
-            \* Handle user scans ONLY IF we are not ignoring a finished truck
             await ~(truckCommand.command = "emptied" /\ truckRequested);
             read(scans, req);
             write(serverRequests, [user |-> req.user]);
@@ -330,13 +245,11 @@ ControlStart:
             
             CheckPermission:
             if sRes.permission /\ TrashFitsCapacity(MaxUserTrash) /\ ~truckRequested then
-                \* Unlock the outer door for the authorized user
                 binCommand := [command |-> "change_outer_lock", open |-> TRUE];
                 
                 WaitUserUnlock:
                 await binCommand.command = "finished";
                 
-                \* Track the authorization globally BEFORE writing to the queue
                 authorizedUsers[req.user] := TRUE;
                 write(permissions, [user |-> req.user, bin |-> req.bin, granted |-> TRUE]);
                 
@@ -344,7 +257,6 @@ ControlStart:
                 await binSensor.sensor = "outer_door_closed" /\ binCommand.command = "finished";
                 binSensor := [sensor |-> "idle"];
                 
-                \* Revoke tracking authorization now that the door is closed
                 authorizedUsers[req.user] := FALSE;
                 
                 LockOuterDoor:
@@ -377,7 +289,6 @@ ControlStart:
                 WaitCloseTrap:
                 await binCommand.command = "finished";
             else
-                \* Decline permission (full, invalid, or truck requested)
                 write(permissions, [user |-> req.user, bin |-> req.bin, granted |-> FALSE]);
             end if;
         end either;
@@ -385,8 +296,8 @@ ControlStart:
 end process;
 
 end algorithm; *)
-\* BEGIN TRANSLATION (chksum(pcal) = "3e4eb01f" /\ chksum(tla) = "1c5f8564")
-\* Process variable req of process serverProcess at line 258 col 3 changed to req_
+\* BEGIN TRANSLATION (chksum(pcal) = "4e8905c1" /\ chksum(tla) = "8cc8ed4e")
+\* Process variable req of process serverProcess at line 188 col 3 changed to req_
 VARIABLES outerDoorOpen, outerDoorLocked, trapDoorOpen, ramExtended, 
           trashInTop, trashCompressed, trashUncompressed, trashCapacity, 
           trapDestroyed, userTrash, binCommand, binSensor, scans, permissions, 
@@ -396,11 +307,6 @@ VARIABLES outerDoorOpen, outerDoorLocked, trapDoorOpen, ramExtended,
 Trash == trashCompressed + trashUncompressed
 CapacityExceeded == Trash > trashCapacity
 TrashFitsCapacity(trash) == Trash + trash <= trashCapacity
-
-
-
-
-
 
 TypeOK == /\ outerDoorOpen \in BOOLEAN
           /\ outerDoorLocked \in BOOLEAN
@@ -430,15 +336,10 @@ TypeOK == /\ outerDoorOpen \in BOOLEAN
           /\ truckCommand.command \in TruckCommand
           /\ truckCommand.bin \in Bins
 
-
 MessagesOK == /\ Len(scans) <= 1
               /\ Len(permissions) <= 1
               /\ Len(serverRequests) <= 1
               /\ Len(serverResponses) <= 1
-
-
-
-
 
 CapacitiesRespected == /\ trashUncompressed >= 0
                        /\ trashUncompressed <= trashCapacity
@@ -449,25 +350,12 @@ CapacitiesRespected == /\ trashUncompressed >= 0
 TrapNotDestroyed == ~trapDestroyed
 CapacityNotExceeded == ~CapacityExceeded
 
-
-
-
-
-
-
-
 OuterDoorLocked == outerDoorLocked => ~outerDoorOpen
-
 RamOuterDoor == ramExtended => (~outerDoorOpen /\ outerDoorLocked)
-
 TrashEmptied == [](~TrashFitsCapacity(MaxUserTrash) => <>(Trash = 0))
-
 AuthorizedOpenOnly == outerDoorOpen => \E u \in Users : authorizedUsers[u]
-
 UserTrash == []<>(userTrash > 0) /\ []<>(userTrash = 0)
-
 UserTrashDeposited == []((userTrash > 0) => <>(userTrash = 0))
-
 TruckEmpties == []((truckCommand.command = "request") => <>(truckCommand.command = "emptied"))
 
 VARIABLES perm, req_, req, sRes, truckRequested
@@ -517,7 +405,7 @@ BinWaitForCommand(self) == /\ pc[self] = "BinWaitForCommand"
                            /\ binCommand.command /= "finished"
                            /\ IF binCommand.command = "change_outer_door"
                                  THEN /\ Assert(~outerDoorLocked, 
-                                                "Failure of assertion at line 164, column 9.")
+                                                "Failure of assertion at line 109, column 9.")
                                       /\ outerDoorOpen' = binCommand.open
                                       /\ IF ~outerDoorOpen'
                                             THEN /\ binSensor' = [sensor |-> "outer_door_closed"]
@@ -531,7 +419,7 @@ BinWaitForCommand(self) == /\ pc[self] = "BinWaitForCommand"
                                                       trapDestroyed >>
                                  ELSE /\ IF binCommand.command = "change_outer_lock"
                                             THEN /\ Assert(~outerDoorOpen, 
-                                                           "Failure of assertion at line 171, column 9.")
+                                                           "Failure of assertion at line 115, column 9.")
                                                  /\ outerDoorLocked' = ~(binCommand.open)
                                                  /\ UNCHANGED << trapDoorOpen, 
                                                                  ramExtended, 
@@ -541,7 +429,7 @@ BinWaitForCommand(self) == /\ pc[self] = "BinWaitForCommand"
                                                                  trapDestroyed >>
                                             ELSE /\ IF binCommand.command = "change_trap_door"
                                                        THEN /\ Assert(outerDoorLocked, 
-                                                                      "Failure of assertion at line 174, column 9.")
+                                                                      "Failure of assertion at line 118, column 9.")
                                                             /\ IF ramExtended \/ CapacityExceeded
                                                                   THEN /\ trapDestroyed' = TRUE
                                                                   ELSE /\ TRUE
@@ -557,7 +445,7 @@ BinWaitForCommand(self) == /\ pc[self] = "BinWaitForCommand"
                                                                             trashCompressed >>
                                                        ELSE /\ IF binCommand.command = "change_ram"
                                                                   THEN /\ Assert(outerDoorLocked, 
-                                                                                 "Failure of assertion at line 186, column 9.")
+                                                                                 "Failure of assertion at line 128, column 9.")
                                                                        /\ ramExtended' = binCommand.open
                                                                        /\ IF ramExtended'
                                                                              THEN /\ IF ~trapDoorOpen
@@ -572,18 +460,18 @@ BinWaitForCommand(self) == /\ pc[self] = "BinWaitForCommand"
                                                                                                   trapDestroyed >>
                                                                   ELSE /\ IF binCommand.command = "empty"
                                                                              THEN /\ Assert(outerDoorLocked, 
-                                                                                            "Failure of assertion at line 198, column 9.")
+                                                                                            "Failure of assertion at line 137, column 9.")
                                                                                   /\ Assert(~trapDoorOpen, 
-                                                                                            "Failure of assertion at line 199, column 9.")
+                                                                                            "Failure of assertion at line 138, column 9.")
                                                                                   /\ Assert(~ramExtended, 
-                                                                                            "Failure of assertion at line 200, column 9.")
+                                                                                            "Failure of assertion at line 139, column 9.")
                                                                                   /\ Assert(trashInTop = 0, 
-                                                                                            "Failure of assertion at line 201, column 9.")
+                                                                                            "Failure of assertion at line 140, column 9.")
                                                                                   /\ Assert(trashUncompressed = 0, 
-                                                                                            "Failure of assertion at line 202, column 9.")
+                                                                                            "Failure of assertion at line 141, column 9.")
                                                                                   /\ trashCompressed' = 0
                                                                              ELSE /\ Assert(FALSE, 
-                                                                                            "Failure of assertion at line 206, column 9.")
+                                                                                            "Failure of assertion at line 144, column 9.")
                                                                                   /\ UNCHANGED trashCompressed
                                                                        /\ UNCHANGED << ramExtended, 
                                                                                        trashUncompressed, 
@@ -647,9 +535,9 @@ UserAwaitScanResponse(self) == /\ pc[self] = "UserAwaitScanResponse"
                                /\ perm' = [perm EXCEPT ![self] = Head(permissions)]
                                /\ permissions' = Tail(permissions)
                                /\ Assert(perm'[self].user = self, 
-                                         "Failure of assertion at line 233, column 7.")
+                                         "Failure of assertion at line 167, column 7.")
                                /\ Assert(perm'[self].bin = 1, 
-                                         "Failure of assertion at line 234, column 7.")
+                                         "Failure of assertion at line 168, column 7.")
                                /\ IF perm'[self].granted
                                      THEN /\ pc' = [pc EXCEPT ![self] = "UserOpenDoor"]
                                      ELSE /\ pc' = [pc EXCEPT ![self] = "UserNextIteration"]
@@ -692,7 +580,7 @@ UserAwaitOpenDoor(self) == /\ pc[self] = "UserAwaitOpenDoor"
 
 UserDepositTrash(self) == /\ pc[self] = "UserDepositTrash"
                           /\ Assert(trashInTop = 0, 
-                                    "Failure of assertion at line 241, column 9.")
+                                    "Failure of assertion at line 175, column 9.")
                           /\ trashInTop' = userTrash
                           /\ userTrash' = 0
                           /\ pc' = [pc EXCEPT ![self] = "UserCloseDoor"]
@@ -1081,4 +969,4 @@ Spec == /\ Init /\ [][Next]_vars
 
 =============================================================================
 \* Modification History
-\* Last modified Sat Oct 17 13:16:57 CEST 2026 by 20254351
+\* Last modified Tue Oct 20 12:11:24 CEST 2026 by 20254351
