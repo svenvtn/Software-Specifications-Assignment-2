@@ -1,0 +1,1936 @@
+@!@!@STARTMSG 2262:0 @!@!@
+TLC2 Version 2.19 of 08 August 2024 (rev: 5a47802)
+@!@!@ENDMSG 2262 @!@!@
+@!@!@STARTMSG 2187:0 @!@!@
+Running breadth-first search Model-Checking with fp 78 and seed -4143718289826979968 with 8 workers on 16 cores with 2373MB heap and 5337MB offheap memory [pid: 15292] (Windows 10 10.0 amd64, AdoptOpenJDK 14.0.1 x86_64, OffHeapDiskFPSet, DiskStateQueue).
+@!@!@ENDMSG 2187 @!@!@
+@!@!@STARTMSG 2220:0 @!@!@
+Starting SANY...
+@!@!@ENDMSG 2220 @!@!@
+Parsing file C:\Users\20254351\OneDrive - TU Eindhoven\Documents\2IX20\Assignment 2\TrashBins\trash_bins.toolbox\model_multiple\MC.tla
+Parsing file C:\Users\20254351\OneDrive - TU Eindhoven\Documents\2IX20\Assignment 2\TrashBins\trash_bins.toolbox\model_multiple\trash_bins.tla
+Parsing file C:\Program Files\toolbox\plugins\org.lamport.tlatools_1.0.0.202408081326\tla2sany\StandardModules\TLC.tla
+Parsing file C:\Users\20254351\OneDrive - TU Eindhoven\Documents\2IX20\Assignment 2\TrashBins\trash_bins.toolbox\model_multiple\trash_single.tla
+Warning: symbols were renamed.
+Parsing file C:\Users\20254351\OneDrive - TU Eindhoven\Documents\2IX20\Assignment 2\TrashBins\trash_bins.toolbox\model_multiple\trash_data.tla
+Parsing file C:\Program Files\toolbox\plugins\org.lamport.tlatools_1.0.0.202408081326\tla2sany\StandardModules\Integers.tla
+Parsing file C:\Program Files\toolbox\plugins\org.lamport.tlatools_1.0.0.202408081326\tla2sany\StandardModules\Sequences.tla
+Parsing file C:\Program Files\toolbox\plugins\org.lamport.tlatools_1.0.0.202408081326\tla2sany\StandardModules\FiniteSets.tla
+Parsing file C:\Program Files\toolbox\plugins\org.lamport.tlatools_1.0.0.202408081326\tla2sany\StandardModules\Naturals.tla
+Semantic processing of module Naturals
+Semantic processing of module Integers
+Semantic processing of module Sequences
+Semantic processing of module FiniteSets
+Semantic processing of module TLC
+Semantic processing of module trash_data
+Semantic processing of module trash_single
+Semantic processing of module trash_bins
+Semantic processing of module MC
+@!@!@STARTMSG 2219:0 @!@!@
+SANY finished.
+@!@!@ENDMSG 2219 @!@!@
+@!@!@STARTMSG 2185:0 @!@!@
+Starting... (2026-10-19 16:58:47)
+@!@!@ENDMSG 2185 @!@!@
+@!@!@STARTMSG 2189:0 @!@!@
+Computing initial states...
+@!@!@ENDMSG 2189 @!@!@
+@!@!@STARTMSG 2190:0 @!@!@
+Finished computing initial states: 1 distinct state generated at 2026-10-19 16:58:47.
+@!@!@ENDMSG 2190 @!@!@
+@!@!@STARTMSG 2114:1 @!@!@
+Deadlock reached.
+@!@!@ENDMSG 2114 @!@!@
+@!@!@STARTMSG 2121:1 @!@!@
+The behavior up to this point is:
+@!@!@ENDMSG 2121 @!@!@
+@!@!@STARTMSG 2217:4 @!@!@
+1: <Initial predicate>
+/\ trapDoorOpen = FALSE
+/\ truckRequested = FALSE
+/\ binSensor = [sensor |-> "idle"]
+/\ serverRequests = <<>>
+/\ req_ = [user |-> 0]
+/\ ramExtended = FALSE
+/\ trapDestroyed = FALSE
+/\ userTrash = 0
+/\ authorizedUsers = (3 :> FALSE)
+/\ sRes = [user |-> 0, permission |-> FALSE]
+/\ pc = ( 0 :> "ControlStart" @@
+  1 :> "BinWaitForCommand" @@
+  2 :> "BinWaitForCommand" @@
+  3 :> "UserNextIteration" @@
+  4 :> "TruckStart" @@
+  5 :> "ServerNextIteration" )
+/\ serverResponses = <<>>
+/\ permissions = <<>>
+/\ req = [bin |-> 0, user |-> 0]
+/\ outerDoorLocked = TRUE
+/\ scans = <<>>
+/\ binCommand = [command |-> "finished", open |-> FALSE]
+/\ outerDoorOpen = FALSE
+/\ truckCommand = [command |-> "emptied", bin |-> 1]
+/\ perm = (3 :> [bin |-> 0, user |-> 0, granted |-> FALSE])
+/\ trashInTop = 0
+/\ trashCompressed = 0
+/\ trashUncompressed = 0
+/\ trashCapacity = 3
+
+@!@!@ENDMSG 2217 @!@!@
+@!@!@STARTMSG 2217:4 @!@!@
+2: <ServerNextIteration line 754, col 24 to line 764, col 56 of module trash_single>
+/\ trapDoorOpen = FALSE
+/\ truckRequested = FALSE
+/\ binSensor = [sensor |-> "idle"]
+/\ serverRequests = <<>>
+/\ req_ = [user |-> 0]
+/\ ramExtended = FALSE
+/\ trapDestroyed = FALSE
+/\ userTrash = 0
+/\ authorizedUsers = (3 :> FALSE)
+/\ sRes = [user |-> 0, permission |-> FALSE]
+/\ pc = ( 0 :> "ControlStart" @@
+  1 :> "BinWaitForCommand" @@
+  2 :> "BinWaitForCommand" @@
+  3 :> "UserNextIteration" @@
+  4 :> "TruckStart" @@
+  5 :> "ServerAwaitRequest" )
+/\ serverResponses = <<>>
+/\ permissions = <<>>
+/\ req = [bin |-> 0, user |-> 0]
+/\ outerDoorLocked = TRUE
+/\ scans = <<>>
+/\ binCommand = [command |-> "finished", open |-> FALSE]
+/\ outerDoorOpen = FALSE
+/\ truckCommand = [command |-> "emptied", bin |-> 1]
+/\ perm = (3 :> [bin |-> 0, user |-> 0, granted |-> FALSE])
+/\ trashInTop = 0
+/\ trashCompressed = 0
+/\ trashUncompressed = 0
+/\ trashCapacity = 3
+
+@!@!@ENDMSG 2217 @!@!@
+@!@!@STARTMSG 2217:4 @!@!@
+3: <ControlStart line 857, col 17 to line 870, col 44 of module trash_single>
+/\ trapDoorOpen = FALSE
+/\ truckRequested = FALSE
+/\ binSensor = [sensor |-> "idle"]
+/\ serverRequests = <<>>
+/\ req_ = [user |-> 0]
+/\ ramExtended = FALSE
+/\ trapDestroyed = FALSE
+/\ userTrash = 0
+/\ authorizedUsers = (3 :> FALSE)
+/\ sRes = [user |-> 0, permission |-> FALSE]
+/\ pc = ( 0 :> "WaitEvent" @@
+  1 :> "BinWaitForCommand" @@
+  2 :> "BinWaitForCommand" @@
+  3 :> "UserNextIteration" @@
+  4 :> "TruckStart" @@
+  5 :> "ServerAwaitRequest" )
+/\ serverResponses = <<>>
+/\ permissions = <<>>
+/\ req = [bin |-> 0, user |-> 0]
+/\ outerDoorLocked = TRUE
+/\ scans = <<>>
+/\ binCommand = [command |-> "finished", open |-> FALSE]
+/\ outerDoorOpen = FALSE
+/\ truckCommand = [command |-> "emptied", bin |-> 1]
+/\ perm = (3 :> [bin |-> 0, user |-> 0, granted |-> FALSE])
+/\ trashInTop = 0
+/\ trashCompressed = 0
+/\ trashUncompressed = 0
+/\ trashCapacity = 3
+
+@!@!@ENDMSG 2217 @!@!@
+@!@!@STARTMSG 2217:4 @!@!@
+4: <UserNextIteration line 618, col 28 to line 631, col 66 of module trash_single>
+/\ trapDoorOpen = FALSE
+/\ truckRequested = FALSE
+/\ binSensor = [sensor |-> "idle"]
+/\ serverRequests = <<>>
+/\ req_ = [user |-> 0]
+/\ ramExtended = FALSE
+/\ trapDestroyed = FALSE
+/\ userTrash = 0
+/\ authorizedUsers = (3 :> FALSE)
+/\ sRes = [user |-> 0, permission |-> FALSE]
+/\ pc = ( 0 :> "WaitEvent" @@
+  1 :> "BinWaitForCommand" @@
+  2 :> "BinWaitForCommand" @@
+  3 :> "UserNewTrash" @@
+  4 :> "TruckStart" @@
+  5 :> "ServerAwaitRequest" )
+/\ serverResponses = <<>>
+/\ permissions = <<>>
+/\ req = [bin |-> 0, user |-> 0]
+/\ outerDoorLocked = TRUE
+/\ scans = <<>>
+/\ binCommand = [command |-> "finished", open |-> FALSE]
+/\ outerDoorOpen = FALSE
+/\ truckCommand = [command |-> "emptied", bin |-> 1]
+/\ perm = (3 :> [bin |-> 0, user |-> 0, granted |-> FALSE])
+/\ trashInTop = 0
+/\ trashCompressed = 0
+/\ trashUncompressed = 0
+/\ trashCapacity = 3
+
+@!@!@ENDMSG 2217 @!@!@
+@!@!@STARTMSG 2217:4 @!@!@
+5: <UserNewTrash line 735, col 23 to line 746, col 72 of module trash_single>
+/\ trapDoorOpen = FALSE
+/\ truckRequested = FALSE
+/\ binSensor = [sensor |-> "idle"]
+/\ serverRequests = <<>>
+/\ req_ = [user |-> 0]
+/\ ramExtended = FALSE
+/\ trapDestroyed = FALSE
+/\ userTrash = 1
+/\ authorizedUsers = (3 :> FALSE)
+/\ sRes = [user |-> 0, permission |-> FALSE]
+/\ pc = ( 0 :> "WaitEvent" @@
+  1 :> "BinWaitForCommand" @@
+  2 :> "BinWaitForCommand" @@
+  3 :> "UserScanCard" @@
+  4 :> "TruckStart" @@
+  5 :> "ServerAwaitRequest" )
+/\ serverResponses = <<>>
+/\ permissions = <<>>
+/\ req = [bin |-> 0, user |-> 0]
+/\ outerDoorLocked = TRUE
+/\ scans = <<>>
+/\ binCommand = [command |-> "finished", open |-> FALSE]
+/\ outerDoorOpen = FALSE
+/\ truckCommand = [command |-> "emptied", bin |-> 1]
+/\ perm = (3 :> [bin |-> 0, user |-> 0, granted |-> FALSE])
+/\ trashInTop = 0
+/\ trashCompressed = 0
+/\ trashUncompressed = 0
+/\ trashCapacity = 3
+
+@!@!@ENDMSG 2217 @!@!@
+@!@!@STARTMSG 2217:4 @!@!@
+6: <UserScanCard line 633, col 23 to line 643, col 72 of module trash_single>
+/\ trapDoorOpen = FALSE
+/\ truckRequested = FALSE
+/\ binSensor = [sensor |-> "idle"]
+/\ serverRequests = <<>>
+/\ req_ = [user |-> 0]
+/\ ramExtended = FALSE
+/\ trapDestroyed = FALSE
+/\ userTrash = 1
+/\ authorizedUsers = (3 :> FALSE)
+/\ sRes = [user |-> 0, permission |-> FALSE]
+/\ pc = ( 0 :> "WaitEvent" @@
+  1 :> "BinWaitForCommand" @@
+  2 :> "BinWaitForCommand" @@
+  3 :> "UserAwaitScanResponse" @@
+  4 :> "TruckStart" @@
+  5 :> "ServerAwaitRequest" )
+/\ serverResponses = <<>>
+/\ permissions = <<>>
+/\ req = [bin |-> 0, user |-> 0]
+/\ outerDoorLocked = TRUE
+/\ scans = <<[bin |-> 1, user |-> 3]>>
+/\ binCommand = [command |-> "finished", open |-> FALSE]
+/\ outerDoorOpen = FALSE
+/\ truckCommand = [command |-> "emptied", bin |-> 1]
+/\ perm = (3 :> [bin |-> 0, user |-> 0, granted |-> FALSE])
+/\ trashInTop = 0
+/\ trashCompressed = 0
+/\ trashUncompressed = 0
+/\ trashCapacity = 3
+
+@!@!@ENDMSG 2217 @!@!@
+@!@!@STARTMSG 2217:4 @!@!@
+7: <WaitEvent line 872, col 14 to line 889, col 48 of module trash_single>
+/\ trapDoorOpen = FALSE
+/\ truckRequested = FALSE
+/\ binSensor = [sensor |-> "idle"]
+/\ serverRequests = <<[user |-> 3]>>
+/\ req_ = [user |-> 0]
+/\ ramExtended = FALSE
+/\ trapDestroyed = FALSE
+/\ userTrash = 1
+/\ authorizedUsers = (3 :> FALSE)
+/\ sRes = [user |-> 0, permission |-> FALSE]
+/\ pc = ( 0 :> "WaitServer" @@
+  1 :> "BinWaitForCommand" @@
+  2 :> "BinWaitForCommand" @@
+  3 :> "UserAwaitScanResponse" @@
+  4 :> "TruckStart" @@
+  5 :> "ServerAwaitRequest" )
+/\ serverResponses = <<>>
+/\ permissions = <<>>
+/\ req = [bin |-> 1, user |-> 3]
+/\ outerDoorLocked = TRUE
+/\ scans = <<>>
+/\ binCommand = [command |-> "finished", open |-> FALSE]
+/\ outerDoorOpen = FALSE
+/\ truckCommand = [command |-> "emptied", bin |-> 1]
+/\ perm = (3 :> [bin |-> 0, user |-> 0, granted |-> FALSE])
+/\ trashInTop = 0
+/\ trashCompressed = 0
+/\ trashUncompressed = 0
+/\ trashCapacity = 3
+
+@!@!@ENDMSG 2217 @!@!@
+@!@!@STARTMSG 2217:4 @!@!@
+8: <ServerAwaitRequest line 766, col 23 to line 780, col 55 of module trash_single>
+/\ trapDoorOpen = FALSE
+/\ truckRequested = FALSE
+/\ binSensor = [sensor |-> "idle"]
+/\ serverRequests = <<>>
+/\ req_ = [user |-> 3]
+/\ ramExtended = FALSE
+/\ trapDestroyed = FALSE
+/\ userTrash = 1
+/\ authorizedUsers = (3 :> FALSE)
+/\ sRes = [user |-> 0, permission |-> FALSE]
+/\ pc = ( 0 :> "WaitServer" @@
+  1 :> "BinWaitForCommand" @@
+  2 :> "BinWaitForCommand" @@
+  3 :> "UserAwaitScanResponse" @@
+  4 :> "TruckStart" @@
+  5 :> "ServerNextIteration" )
+/\ serverResponses = <<[user |-> 3, permission |-> TRUE]>>
+/\ permissions = <<>>
+/\ req = [bin |-> 1, user |-> 3]
+/\ outerDoorLocked = TRUE
+/\ scans = <<>>
+/\ binCommand = [command |-> "finished", open |-> FALSE]
+/\ outerDoorOpen = FALSE
+/\ truckCommand = [command |-> "emptied", bin |-> 1]
+/\ perm = (3 :> [bin |-> 0, user |-> 0, granted |-> FALSE])
+/\ trashInTop = 0
+/\ trashCompressed = 0
+/\ trashUncompressed = 0
+/\ trashCapacity = 3
+
+@!@!@ENDMSG 2217 @!@!@
+@!@!@STARTMSG 2217:4 @!@!@
+9: <WaitServer line 891, col 15 to line 901, col 81 of module trash_single>
+/\ trapDoorOpen = FALSE
+/\ truckRequested = FALSE
+/\ binSensor = [sensor |-> "idle"]
+/\ serverRequests = <<>>
+/\ req_ = [user |-> 3]
+/\ ramExtended = FALSE
+/\ trapDestroyed = FALSE
+/\ userTrash = 1
+/\ authorizedUsers = (3 :> FALSE)
+/\ sRes = [user |-> 3, permission |-> TRUE]
+/\ pc = ( 0 :> "CheckPermission" @@
+  1 :> "BinWaitForCommand" @@
+  2 :> "BinWaitForCommand" @@
+  3 :> "UserAwaitScanResponse" @@
+  4 :> "TruckStart" @@
+  5 :> "ServerNextIteration" )
+/\ serverResponses = <<>>
+/\ permissions = <<>>
+/\ req = [bin |-> 1, user |-> 3]
+/\ outerDoorLocked = TRUE
+/\ scans = <<>>
+/\ binCommand = [command |-> "finished", open |-> FALSE]
+/\ outerDoorOpen = FALSE
+/\ truckCommand = [command |-> "emptied", bin |-> 1]
+/\ perm = (3 :> [bin |-> 0, user |-> 0, granted |-> FALSE])
+/\ trashInTop = 0
+/\ trashCompressed = 0
+/\ trashUncompressed = 0
+/\ trashCapacity = 3
+
+@!@!@ENDMSG 2217 @!@!@
+@!@!@STARTMSG 2217:4 @!@!@
+10: <CheckPermission line 903, col 20 to line 918, col 52 of module trash_single>
+/\ trapDoorOpen = FALSE
+/\ truckRequested = FALSE
+/\ binSensor = [sensor |-> "idle"]
+/\ serverRequests = <<>>
+/\ req_ = [user |-> 3]
+/\ ramExtended = FALSE
+/\ trapDestroyed = FALSE
+/\ userTrash = 1
+/\ authorizedUsers = (3 :> FALSE)
+/\ sRes = [user |-> 3, permission |-> TRUE]
+/\ pc = ( 0 :> "WaitUserUnlock" @@
+  1 :> "BinWaitForCommand" @@
+  2 :> "BinWaitForCommand" @@
+  3 :> "UserAwaitScanResponse" @@
+  4 :> "TruckStart" @@
+  5 :> "ServerNextIteration" )
+/\ serverResponses = <<>>
+/\ permissions = <<>>
+/\ req = [bin |-> 1, user |-> 3]
+/\ outerDoorLocked = TRUE
+/\ scans = <<>>
+/\ binCommand = [command |-> "change_outer_lock", open |-> TRUE]
+/\ outerDoorOpen = FALSE
+/\ truckCommand = [command |-> "emptied", bin |-> 1]
+/\ perm = (3 :> [bin |-> 0, user |-> 0, granted |-> FALSE])
+/\ trashInTop = 0
+/\ trashCompressed = 0
+/\ trashUncompressed = 0
+/\ trashCapacity = 3
+
+@!@!@ENDMSG 2217 @!@!@
+@!@!@STARTMSG 2217:4 @!@!@
+11: <ServerNextIteration line 754, col 24 to line 764, col 56 of module trash_single>
+/\ trapDoorOpen = FALSE
+/\ truckRequested = FALSE
+/\ binSensor = [sensor |-> "idle"]
+/\ serverRequests = <<>>
+/\ req_ = [user |-> 3]
+/\ ramExtended = FALSE
+/\ trapDestroyed = FALSE
+/\ userTrash = 1
+/\ authorizedUsers = (3 :> FALSE)
+/\ sRes = [user |-> 3, permission |-> TRUE]
+/\ pc = ( 0 :> "WaitUserUnlock" @@
+  1 :> "BinWaitForCommand" @@
+  2 :> "BinWaitForCommand" @@
+  3 :> "UserAwaitScanResponse" @@
+  4 :> "TruckStart" @@
+  5 :> "ServerAwaitRequest" )
+/\ serverResponses = <<>>
+/\ permissions = <<>>
+/\ req = [bin |-> 1, user |-> 3]
+/\ outerDoorLocked = TRUE
+/\ scans = <<>>
+/\ binCommand = [command |-> "change_outer_lock", open |-> TRUE]
+/\ outerDoorOpen = FALSE
+/\ truckCommand = [command |-> "emptied", bin |-> 1]
+/\ perm = (3 :> [bin |-> 0, user |-> 0, granted |-> FALSE])
+/\ trashInTop = 0
+/\ trashCompressed = 0
+/\ trashUncompressed = 0
+/\ trashCapacity = 3
+
+@!@!@ENDMSG 2217 @!@!@
+@!@!@STARTMSG 2217:4 @!@!@
+12: <BinWaitForCommand line 516, col 28 to line 600, col 77 of module trash_single>
+/\ trapDoorOpen = FALSE
+/\ truckRequested = FALSE
+/\ binSensor = [sensor |-> "idle"]
+/\ serverRequests = <<>>
+/\ req_ = [user |-> 3]
+/\ ramExtended = FALSE
+/\ trapDestroyed = FALSE
+/\ userTrash = 1
+/\ authorizedUsers = (3 :> FALSE)
+/\ sRes = [user |-> 3, permission |-> TRUE]
+/\ pc = ( 0 :> "WaitUserUnlock" @@
+  1 :> "BinCommandFinished" @@
+  2 :> "BinWaitForCommand" @@
+  3 :> "UserAwaitScanResponse" @@
+  4 :> "TruckStart" @@
+  5 :> "ServerAwaitRequest" )
+/\ serverResponses = <<>>
+/\ permissions = <<>>
+/\ req = [bin |-> 1, user |-> 3]
+/\ outerDoorLocked = FALSE
+/\ scans = <<>>
+/\ binCommand = [command |-> "change_outer_lock", open |-> TRUE]
+/\ outerDoorOpen = FALSE
+/\ truckCommand = [command |-> "emptied", bin |-> 1]
+/\ perm = (3 :> [bin |-> 0, user |-> 0, granted |-> FALSE])
+/\ trashInTop = 0
+/\ trashCompressed = 0
+/\ trashUncompressed = 0
+/\ trashCapacity = 3
+
+@!@!@ENDMSG 2217 @!@!@
+@!@!@STARTMSG 2217:4 @!@!@
+13: <BinWaitForCommand line 516, col 28 to line 600, col 77 of module trash_single>
+/\ trapDoorOpen = FALSE
+/\ truckRequested = FALSE
+/\ binSensor = [sensor |-> "idle"]
+/\ serverRequests = <<>>
+/\ req_ = [user |-> 3]
+/\ ramExtended = FALSE
+/\ trapDestroyed = FALSE
+/\ userTrash = 1
+/\ authorizedUsers = (3 :> FALSE)
+/\ sRes = [user |-> 3, permission |-> TRUE]
+/\ pc = ( 0 :> "WaitUserUnlock" @@
+  1 :> "BinCommandFinished" @@
+  2 :> "BinCommandFinished" @@
+  3 :> "UserAwaitScanResponse" @@
+  4 :> "TruckStart" @@
+  5 :> "ServerAwaitRequest" )
+/\ serverResponses = <<>>
+/\ permissions = <<>>
+/\ req = [bin |-> 1, user |-> 3]
+/\ outerDoorLocked = FALSE
+/\ scans = <<>>
+/\ binCommand = [command |-> "change_outer_lock", open |-> TRUE]
+/\ outerDoorOpen = FALSE
+/\ truckCommand = [command |-> "emptied", bin |-> 1]
+/\ perm = (3 :> [bin |-> 0, user |-> 0, granted |-> FALSE])
+/\ trashInTop = 0
+/\ trashCompressed = 0
+/\ trashUncompressed = 0
+/\ trashCapacity = 3
+
+@!@!@ENDMSG 2217 @!@!@
+@!@!@STARTMSG 2217:4 @!@!@
+14: <BinCommandFinished line 602, col 29 to line 614, col 61 of module trash_single>
+/\ trapDoorOpen = FALSE
+/\ truckRequested = FALSE
+/\ binSensor = [sensor |-> "idle"]
+/\ serverRequests = <<>>
+/\ req_ = [user |-> 3]
+/\ ramExtended = FALSE
+/\ trapDestroyed = FALSE
+/\ userTrash = 1
+/\ authorizedUsers = (3 :> FALSE)
+/\ sRes = [user |-> 3, permission |-> TRUE]
+/\ pc = ( 0 :> "WaitUserUnlock" @@
+  1 :> "BinWaitForCommand" @@
+  2 :> "BinCommandFinished" @@
+  3 :> "UserAwaitScanResponse" @@
+  4 :> "TruckStart" @@
+  5 :> "ServerAwaitRequest" )
+/\ serverResponses = <<>>
+/\ permissions = <<>>
+/\ req = [bin |-> 1, user |-> 3]
+/\ outerDoorLocked = FALSE
+/\ scans = <<>>
+/\ binCommand = [command |-> "finished", open |-> TRUE]
+/\ outerDoorOpen = FALSE
+/\ truckCommand = [command |-> "emptied", bin |-> 1]
+/\ perm = (3 :> [bin |-> 0, user |-> 0, granted |-> FALSE])
+/\ trashInTop = 0
+/\ trashCompressed = 0
+/\ trashUncompressed = 0
+/\ trashCapacity = 3
+
+@!@!@ENDMSG 2217 @!@!@
+@!@!@STARTMSG 2217:4 @!@!@
+15: <WaitUserUnlock line 920, col 19 to line 931, col 62 of module trash_single>
+/\ trapDoorOpen = FALSE
+/\ truckRequested = FALSE
+/\ binSensor = [sensor |-> "idle"]
+/\ serverRequests = <<>>
+/\ req_ = [user |-> 3]
+/\ ramExtended = FALSE
+/\ trapDestroyed = FALSE
+/\ userTrash = 1
+/\ authorizedUsers = (3 :> TRUE)
+/\ sRes = [user |-> 3, permission |-> TRUE]
+/\ pc = ( 0 :> "WaitDoorClose" @@
+  1 :> "BinWaitForCommand" @@
+  2 :> "BinCommandFinished" @@
+  3 :> "UserAwaitScanResponse" @@
+  4 :> "TruckStart" @@
+  5 :> "ServerAwaitRequest" )
+/\ serverResponses = <<>>
+/\ permissions = <<[bin |-> 1, user |-> 3, granted |-> TRUE]>>
+/\ req = [bin |-> 1, user |-> 3]
+/\ outerDoorLocked = FALSE
+/\ scans = <<>>
+/\ binCommand = [command |-> "finished", open |-> TRUE]
+/\ outerDoorOpen = FALSE
+/\ truckCommand = [command |-> "emptied", bin |-> 1]
+/\ perm = (3 :> [bin |-> 0, user |-> 0, granted |-> FALSE])
+/\ trashInTop = 0
+/\ trashCompressed = 0
+/\ trashUncompressed = 0
+/\ trashCapacity = 3
+
+@!@!@ENDMSG 2217 @!@!@
+@!@!@STARTMSG 2217:4 @!@!@
+16: <UserAwaitScanResponse line 645, col 32 to line 665, col 81 of module trash_single>
+/\ trapDoorOpen = FALSE
+/\ truckRequested = FALSE
+/\ binSensor = [sensor |-> "idle"]
+/\ serverRequests = <<>>
+/\ req_ = [user |-> 3]
+/\ ramExtended = FALSE
+/\ trapDestroyed = FALSE
+/\ userTrash = 1
+/\ authorizedUsers = (3 :> TRUE)
+/\ sRes = [user |-> 3, permission |-> TRUE]
+/\ pc = ( 0 :> "WaitDoorClose" @@
+  1 :> "BinWaitForCommand" @@
+  2 :> "BinCommandFinished" @@
+  3 :> "UserOpenDoor" @@
+  4 :> "TruckStart" @@
+  5 :> "ServerAwaitRequest" )
+/\ serverResponses = <<>>
+/\ permissions = <<>>
+/\ req = [bin |-> 1, user |-> 3]
+/\ outerDoorLocked = FALSE
+/\ scans = <<>>
+/\ binCommand = [command |-> "finished", open |-> TRUE]
+/\ outerDoorOpen = FALSE
+/\ truckCommand = [command |-> "emptied", bin |-> 1]
+/\ perm = (3 :> [bin |-> 1, user |-> 3, granted |-> TRUE])
+/\ trashInTop = 0
+/\ trashCompressed = 0
+/\ trashUncompressed = 0
+/\ trashCapacity = 3
+
+@!@!@ENDMSG 2217 @!@!@
+@!@!@STARTMSG 2217:4 @!@!@
+17: <UserOpenDoor line 667, col 23 to line 677, col 72 of module trash_single>
+/\ trapDoorOpen = FALSE
+/\ truckRequested = FALSE
+/\ binSensor = [sensor |-> "idle"]
+/\ serverRequests = <<>>
+/\ req_ = [user |-> 3]
+/\ ramExtended = FALSE
+/\ trapDestroyed = FALSE
+/\ userTrash = 1
+/\ authorizedUsers = (3 :> TRUE)
+/\ sRes = [user |-> 3, permission |-> TRUE]
+/\ pc = ( 0 :> "WaitDoorClose" @@
+  1 :> "BinWaitForCommand" @@
+  2 :> "BinCommandFinished" @@
+  3 :> "UserAwaitOpenDoor" @@
+  4 :> "TruckStart" @@
+  5 :> "ServerAwaitRequest" )
+/\ serverResponses = <<>>
+/\ permissions = <<>>
+/\ req = [bin |-> 1, user |-> 3]
+/\ outerDoorLocked = FALSE
+/\ scans = <<>>
+/\ binCommand = [command |-> "change_outer_door", open |-> TRUE]
+/\ outerDoorOpen = FALSE
+/\ truckCommand = [command |-> "emptied", bin |-> 1]
+/\ perm = (3 :> [bin |-> 1, user |-> 3, granted |-> TRUE])
+/\ trashInTop = 0
+/\ trashCompressed = 0
+/\ trashUncompressed = 0
+/\ trashCapacity = 3
+
+@!@!@ENDMSG 2217 @!@!@
+@!@!@STARTMSG 2217:4 @!@!@
+18: <BinWaitForCommand line 516, col 28 to line 600, col 77 of module trash_single>
+/\ trapDoorOpen = FALSE
+/\ truckRequested = FALSE
+/\ binSensor = [sensor |-> "idle"]
+/\ serverRequests = <<>>
+/\ req_ = [user |-> 3]
+/\ ramExtended = FALSE
+/\ trapDestroyed = FALSE
+/\ userTrash = 1
+/\ authorizedUsers = (3 :> TRUE)
+/\ sRes = [user |-> 3, permission |-> TRUE]
+/\ pc = ( 0 :> "WaitDoorClose" @@
+  1 :> "BinCommandFinished" @@
+  2 :> "BinCommandFinished" @@
+  3 :> "UserAwaitOpenDoor" @@
+  4 :> "TruckStart" @@
+  5 :> "ServerAwaitRequest" )
+/\ serverResponses = <<>>
+/\ permissions = <<>>
+/\ req = [bin |-> 1, user |-> 3]
+/\ outerDoorLocked = FALSE
+/\ scans = <<>>
+/\ binCommand = [command |-> "change_outer_door", open |-> TRUE]
+/\ outerDoorOpen = TRUE
+/\ truckCommand = [command |-> "emptied", bin |-> 1]
+/\ perm = (3 :> [bin |-> 1, user |-> 3, granted |-> TRUE])
+/\ trashInTop = 0
+/\ trashCompressed = 0
+/\ trashUncompressed = 0
+/\ trashCapacity = 3
+
+@!@!@ENDMSG 2217 @!@!@
+@!@!@STARTMSG 2217:4 @!@!@
+19: <BinCommandFinished line 602, col 29 to line 614, col 61 of module trash_single>
+/\ trapDoorOpen = FALSE
+/\ truckRequested = FALSE
+/\ binSensor = [sensor |-> "idle"]
+/\ serverRequests = <<>>
+/\ req_ = [user |-> 3]
+/\ ramExtended = FALSE
+/\ trapDestroyed = FALSE
+/\ userTrash = 1
+/\ authorizedUsers = (3 :> TRUE)
+/\ sRes = [user |-> 3, permission |-> TRUE]
+/\ pc = ( 0 :> "WaitDoorClose" @@
+  1 :> "BinWaitForCommand" @@
+  2 :> "BinCommandFinished" @@
+  3 :> "UserAwaitOpenDoor" @@
+  4 :> "TruckStart" @@
+  5 :> "ServerAwaitRequest" )
+/\ serverResponses = <<>>
+/\ permissions = <<>>
+/\ req = [bin |-> 1, user |-> 3]
+/\ outerDoorLocked = FALSE
+/\ scans = <<>>
+/\ binCommand = [command |-> "finished", open |-> TRUE]
+/\ outerDoorOpen = TRUE
+/\ truckCommand = [command |-> "emptied", bin |-> 1]
+/\ perm = (3 :> [bin |-> 1, user |-> 3, granted |-> TRUE])
+/\ trashInTop = 0
+/\ trashCompressed = 0
+/\ trashUncompressed = 0
+/\ trashCapacity = 3
+
+@!@!@ENDMSG 2217 @!@!@
+@!@!@STARTMSG 2217:4 @!@!@
+20: <UserAwaitOpenDoor line 679, col 28 to line 691, col 66 of module trash_single>
+/\ trapDoorOpen = FALSE
+/\ truckRequested = FALSE
+/\ binSensor = [sensor |-> "idle"]
+/\ serverRequests = <<>>
+/\ req_ = [user |-> 3]
+/\ ramExtended = FALSE
+/\ trapDestroyed = FALSE
+/\ userTrash = 1
+/\ authorizedUsers = (3 :> TRUE)
+/\ sRes = [user |-> 3, permission |-> TRUE]
+/\ pc = ( 0 :> "WaitDoorClose" @@
+  1 :> "BinWaitForCommand" @@
+  2 :> "BinCommandFinished" @@
+  3 :> "UserDepositTrash" @@
+  4 :> "TruckStart" @@
+  5 :> "ServerAwaitRequest" )
+/\ serverResponses = <<>>
+/\ permissions = <<>>
+/\ req = [bin |-> 1, user |-> 3]
+/\ outerDoorLocked = FALSE
+/\ scans = <<>>
+/\ binCommand = [command |-> "finished", open |-> TRUE]
+/\ outerDoorOpen = TRUE
+/\ truckCommand = [command |-> "emptied", bin |-> 1]
+/\ perm = (3 :> [bin |-> 1, user |-> 3, granted |-> TRUE])
+/\ trashInTop = 0
+/\ trashCompressed = 0
+/\ trashUncompressed = 0
+/\ trashCapacity = 3
+
+@!@!@ENDMSG 2217 @!@!@
+@!@!@STARTMSG 2217:4 @!@!@
+21: <UserDepositTrash line 693, col 27 to line 707, col 65 of module trash_single>
+/\ trapDoorOpen = FALSE
+/\ truckRequested = FALSE
+/\ binSensor = [sensor |-> "idle"]
+/\ serverRequests = <<>>
+/\ req_ = [user |-> 3]
+/\ ramExtended = FALSE
+/\ trapDestroyed = FALSE
+/\ userTrash = 0
+/\ authorizedUsers = (3 :> TRUE)
+/\ sRes = [user |-> 3, permission |-> TRUE]
+/\ pc = ( 0 :> "WaitDoorClose" @@
+  1 :> "BinWaitForCommand" @@
+  2 :> "BinCommandFinished" @@
+  3 :> "UserCloseDoor" @@
+  4 :> "TruckStart" @@
+  5 :> "ServerAwaitRequest" )
+/\ serverResponses = <<>>
+/\ permissions = <<>>
+/\ req = [bin |-> 1, user |-> 3]
+/\ outerDoorLocked = FALSE
+/\ scans = <<>>
+/\ binCommand = [command |-> "finished", open |-> TRUE]
+/\ outerDoorOpen = TRUE
+/\ truckCommand = [command |-> "emptied", bin |-> 1]
+/\ perm = (3 :> [bin |-> 1, user |-> 3, granted |-> TRUE])
+/\ trashInTop = 1
+/\ trashCompressed = 0
+/\ trashUncompressed = 0
+/\ trashCapacity = 3
+
+@!@!@ENDMSG 2217 @!@!@
+@!@!@STARTMSG 2217:4 @!@!@
+22: <UserCloseDoor line 709, col 24 to line 719, col 73 of module trash_single>
+/\ trapDoorOpen = FALSE
+/\ truckRequested = FALSE
+/\ binSensor = [sensor |-> "idle"]
+/\ serverRequests = <<>>
+/\ req_ = [user |-> 3]
+/\ ramExtended = FALSE
+/\ trapDestroyed = FALSE
+/\ userTrash = 0
+/\ authorizedUsers = (3 :> TRUE)
+/\ sRes = [user |-> 3, permission |-> TRUE]
+/\ pc = ( 0 :> "WaitDoorClose" @@
+  1 :> "BinWaitForCommand" @@
+  2 :> "BinCommandFinished" @@
+  3 :> "UserAwaitClosedDoor" @@
+  4 :> "TruckStart" @@
+  5 :> "ServerAwaitRequest" )
+/\ serverResponses = <<>>
+/\ permissions = <<>>
+/\ req = [bin |-> 1, user |-> 3]
+/\ outerDoorLocked = FALSE
+/\ scans = <<>>
+/\ binCommand = [command |-> "change_outer_door", open |-> FALSE]
+/\ outerDoorOpen = TRUE
+/\ truckCommand = [command |-> "emptied", bin |-> 1]
+/\ perm = (3 :> [bin |-> 1, user |-> 3, granted |-> TRUE])
+/\ trashInTop = 1
+/\ trashCompressed = 0
+/\ trashUncompressed = 0
+/\ trashCapacity = 3
+
+@!@!@ENDMSG 2217 @!@!@
+@!@!@STARTMSG 2217:4 @!@!@
+23: <BinCommandFinished line 602, col 29 to line 614, col 61 of module trash_single>
+/\ trapDoorOpen = FALSE
+/\ truckRequested = FALSE
+/\ binSensor = [sensor |-> "idle"]
+/\ serverRequests = <<>>
+/\ req_ = [user |-> 3]
+/\ ramExtended = FALSE
+/\ trapDestroyed = FALSE
+/\ userTrash = 0
+/\ authorizedUsers = (3 :> TRUE)
+/\ sRes = [user |-> 3, permission |-> TRUE]
+/\ pc = ( 0 :> "WaitDoorClose" @@
+  1 :> "BinWaitForCommand" @@
+  2 :> "BinWaitForCommand" @@
+  3 :> "UserAwaitClosedDoor" @@
+  4 :> "TruckStart" @@
+  5 :> "ServerAwaitRequest" )
+/\ serverResponses = <<>>
+/\ permissions = <<>>
+/\ req = [bin |-> 1, user |-> 3]
+/\ outerDoorLocked = FALSE
+/\ scans = <<>>
+/\ binCommand = [command |-> "finished", open |-> FALSE]
+/\ outerDoorOpen = TRUE
+/\ truckCommand = [command |-> "emptied", bin |-> 1]
+/\ perm = (3 :> [bin |-> 1, user |-> 3, granted |-> TRUE])
+/\ trashInTop = 1
+/\ trashCompressed = 0
+/\ trashUncompressed = 0
+/\ trashCapacity = 3
+
+@!@!@ENDMSG 2217 @!@!@
+@!@!@STARTMSG 2217:4 @!@!@
+24: <TruckStart line 784, col 21 to line 793, col 64 of module trash_single>
+/\ trapDoorOpen = FALSE
+/\ truckRequested = FALSE
+/\ binSensor = [sensor |-> "idle"]
+/\ serverRequests = <<>>
+/\ req_ = [user |-> 3]
+/\ ramExtended = FALSE
+/\ trapDestroyed = FALSE
+/\ userTrash = 0
+/\ authorizedUsers = (3 :> TRUE)
+/\ sRes = [user |-> 3, permission |-> TRUE]
+/\ pc = ( 0 :> "WaitDoorClose" @@
+  1 :> "BinWaitForCommand" @@
+  2 :> "BinWaitForCommand" @@
+  3 :> "UserAwaitClosedDoor" @@
+  4 :> "WaitRequest" @@
+  5 :> "ServerAwaitRequest" )
+/\ serverResponses = <<>>
+/\ permissions = <<>>
+/\ req = [bin |-> 1, user |-> 3]
+/\ outerDoorLocked = FALSE
+/\ scans = <<>>
+/\ binCommand = [command |-> "finished", open |-> FALSE]
+/\ outerDoorOpen = TRUE
+/\ truckCommand = [command |-> "emptied", bin |-> 1]
+/\ perm = (3 :> [bin |-> 1, user |-> 3, granted |-> TRUE])
+/\ trashInTop = 1
+/\ trashCompressed = 0
+/\ trashUncompressed = 0
+/\ trashCapacity = 3
+
+@!@!@ENDMSG 2217 @!@!@
+@!@!@STARTMSG 2217:4 @!@!@
+25: <UserAwaitClosedDoor line 721, col 30 to line 733, col 68 of module trash_single>
+/\ trapDoorOpen = FALSE
+/\ truckRequested = FALSE
+/\ binSensor = [sensor |-> "idle"]
+/\ serverRequests = <<>>
+/\ req_ = [user |-> 3]
+/\ ramExtended = FALSE
+/\ trapDestroyed = FALSE
+/\ userTrash = 0
+/\ authorizedUsers = (3 :> TRUE)
+/\ sRes = [user |-> 3, permission |-> TRUE]
+/\ pc = ( 0 :> "WaitDoorClose" @@
+  1 :> "BinWaitForCommand" @@
+  2 :> "BinWaitForCommand" @@
+  3 :> "UserNextIteration" @@
+  4 :> "WaitRequest" @@
+  5 :> "ServerAwaitRequest" )
+/\ serverResponses = <<>>
+/\ permissions = <<>>
+/\ req = [bin |-> 1, user |-> 3]
+/\ outerDoorLocked = FALSE
+/\ scans = <<>>
+/\ binCommand = [command |-> "finished", open |-> FALSE]
+/\ outerDoorOpen = TRUE
+/\ truckCommand = [command |-> "emptied", bin |-> 1]
+/\ perm = (3 :> [bin |-> 1, user |-> 3, granted |-> TRUE])
+/\ trashInTop = 1
+/\ trashCompressed = 0
+/\ trashUncompressed = 0
+/\ trashCapacity = 3
+
+@!@!@ENDMSG 2217 @!@!@
+@!@!@STARTMSG 2217:4 @!@!@
+26: <UserNextIteration line 618, col 28 to line 631, col 66 of module trash_single>
+/\ trapDoorOpen = FALSE
+/\ truckRequested = FALSE
+/\ binSensor = [sensor |-> "idle"]
+/\ serverRequests = <<>>
+/\ req_ = [user |-> 3]
+/\ ramExtended = FALSE
+/\ trapDestroyed = FALSE
+/\ userTrash = 0
+/\ authorizedUsers = (3 :> TRUE)
+/\ sRes = [user |-> 3, permission |-> TRUE]
+/\ pc = ( 0 :> "WaitDoorClose" @@
+  1 :> "BinWaitForCommand" @@
+  2 :> "BinWaitForCommand" @@
+  3 :> "UserNewTrash" @@
+  4 :> "WaitRequest" @@
+  5 :> "ServerAwaitRequest" )
+/\ serverResponses = <<>>
+/\ permissions = <<>>
+/\ req = [bin |-> 1, user |-> 3]
+/\ outerDoorLocked = FALSE
+/\ scans = <<>>
+/\ binCommand = [command |-> "finished", open |-> FALSE]
+/\ outerDoorOpen = TRUE
+/\ truckCommand = [command |-> "emptied", bin |-> 1]
+/\ perm = (3 :> [bin |-> 1, user |-> 3, granted |-> TRUE])
+/\ trashInTop = 1
+/\ trashCompressed = 0
+/\ trashUncompressed = 0
+/\ trashCapacity = 3
+
+@!@!@ENDMSG 2217 @!@!@
+@!@!@STARTMSG 2217:4 @!@!@
+27: <UserNewTrash line 735, col 23 to line 746, col 72 of module trash_single>
+/\ trapDoorOpen = FALSE
+/\ truckRequested = FALSE
+/\ binSensor = [sensor |-> "idle"]
+/\ serverRequests = <<>>
+/\ req_ = [user |-> 3]
+/\ ramExtended = FALSE
+/\ trapDestroyed = FALSE
+/\ userTrash = 1
+/\ authorizedUsers = (3 :> TRUE)
+/\ sRes = [user |-> 3, permission |-> TRUE]
+/\ pc = ( 0 :> "WaitDoorClose" @@
+  1 :> "BinWaitForCommand" @@
+  2 :> "BinWaitForCommand" @@
+  3 :> "UserScanCard" @@
+  4 :> "WaitRequest" @@
+  5 :> "ServerAwaitRequest" )
+/\ serverResponses = <<>>
+/\ permissions = <<>>
+/\ req = [bin |-> 1, user |-> 3]
+/\ outerDoorLocked = FALSE
+/\ scans = <<>>
+/\ binCommand = [command |-> "finished", open |-> FALSE]
+/\ outerDoorOpen = TRUE
+/\ truckCommand = [command |-> "emptied", bin |-> 1]
+/\ perm = (3 :> [bin |-> 1, user |-> 3, granted |-> TRUE])
+/\ trashInTop = 1
+/\ trashCompressed = 0
+/\ trashUncompressed = 0
+/\ trashCapacity = 3
+
+@!@!@ENDMSG 2217 @!@!@
+@!@!@STARTMSG 2217:4 @!@!@
+28: <UserScanCard line 633, col 23 to line 643, col 72 of module trash_single>
+/\ trapDoorOpen = FALSE
+/\ truckRequested = FALSE
+/\ binSensor = [sensor |-> "idle"]
+/\ serverRequests = <<>>
+/\ req_ = [user |-> 3]
+/\ ramExtended = FALSE
+/\ trapDestroyed = FALSE
+/\ userTrash = 1
+/\ authorizedUsers = (3 :> TRUE)
+/\ sRes = [user |-> 3, permission |-> TRUE]
+/\ pc = ( 0 :> "WaitDoorClose" @@
+  1 :> "BinWaitForCommand" @@
+  2 :> "BinWaitForCommand" @@
+  3 :> "UserAwaitScanResponse" @@
+  4 :> "WaitRequest" @@
+  5 :> "ServerAwaitRequest" )
+/\ serverResponses = <<>>
+/\ permissions = <<>>
+/\ req = [bin |-> 1, user |-> 3]
+/\ outerDoorLocked = FALSE
+/\ scans = <<[bin |-> 1, user |-> 3]>>
+/\ binCommand = [command |-> "finished", open |-> FALSE]
+/\ outerDoorOpen = TRUE
+/\ truckCommand = [command |-> "emptied", bin |-> 1]
+/\ perm = (3 :> [bin |-> 1, user |-> 3, granted |-> TRUE])
+/\ trashInTop = 1
+/\ trashCompressed = 0
+/\ trashUncompressed = 0
+/\ trashCapacity = 3
+
+@!@!@ENDMSG 2217 @!@!@
+@!@!@STARTMSG 2201:0 @!@!@
+The coverage statistics at 2026-10-19 16:58:48
+@!@!@ENDMSG 2201 @!@!@
+@!@!@STARTMSG 2773:0 @!@!@
+<Init line 483, col 1 to line 483, col 4 of module trash_single>: 2:2
+@!@!@ENDMSG 2773 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 484, col 9 to line 514, col 76 of module trash_single: 2
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2772:0 @!@!@
+<BinWaitForCommand line 516, col 1 to line 516, col 23 of module trash_single>: 111:350
+@!@!@ENDMSG 2772 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 516, col 31 to line 516, col 60 of module trash_single: 2374
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  |line 516, col 31 to line 516, col 38 of module trash_single: 2024
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 517, col 31 to line 517, col 62 of module trash_single: 1769
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  |line 517, col 31 to line 517, col 48 of module trash_single: 1419
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 518, col 34 to line 518, col 73 of module trash_single: 354
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 519, col 42 to line 520, col 94 of module trash_single: 114
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 521, col 42 to line 521, col 73 of module trash_single: 114
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 522, col 45 to line 522, col 59 of module trash_single: 114
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 523, col 50 to line 523, col 97 of module trash_single: 65
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 524, col 53 to line 524, col 56 of module trash_single: 49
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 525, col 53 to line 525, col 71 of module trash_single: 49
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 526, col 42 to line 531, col 70 of module trash_single: 114
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 532, col 45 to line 532, col 84 of module trash_single: 240
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 533, col 53 to line 534, col 105 of module trash_single: 232
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 535, col 53 to line 535, col 89 of module trash_single: 232
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 536, col 53 to line 541, col 81 of module trash_single: 232
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 542, col 56 to line 542, col 94 of module trash_single: 8
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 543, col 64 to line 544, col 116 of module trash_single: 4
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  |line 543, col 71 to line 543, col 85 of module trash_single: 8
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 545, col 67 to line 545, col 97 of module trash_single: 4
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 546, col 75 to line 546, col 95 of module trash_single: 0
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 547, col 75 to line 547, col 78 of module trash_single: 4
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 548, col 75 to line 548, col 97 of module trash_single: 4
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 549, col 64 to line 549, col 94 of module trash_single: 4
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 550, col 67 to line 550, col 79 of module trash_single: 4
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 551, col 72 to line 552, col 89 of module trash_single: 4
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 554, col 75 to line 555, col 107 of module trash_single: 0
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 556, col 64 to line 557, col 94 of module trash_single: 4
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 561, col 75 to line 561, col 104 of module trash_single: 0
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 564, col 97 to line 564, col 117 of module trash_single: 0
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 566, col 97 to line 566, col 119 of module trash_single: 0
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 567, col 86 to line 567, col 203 of module trash_single: 0
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 568, col 86 to line 568, col 107 of module trash_single: 0
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 570, col 86 to line 572, col 114 of module trash_single: 0
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 584, col 86 to line 584, col 105 of module trash_single: 0
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 587, col 86 to line 587, col 110 of module trash_single: 0
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 588, col 75 to line 590, col 103 of module trash_single: 0
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 591, col 64 to line 592, col 89 of module trash_single: 0
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 593, col 53 to line 593, col 77 of module trash_single: 4
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 594, col 42 to line 594, col 81 of module trash_single: 236
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 595, col 31 to line 595, col 78 of module trash_single: 350
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 596, col 31 to line 600, col 77 of module trash_single: 350
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2772:0 @!@!@
+<BinCommandFinished line 602, col 1 to line 602, col 24 of module trash_single>: 122:605
+@!@!@ENDMSG 2772 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 602, col 32 to line 602, col 62 of module trash_single: 2622
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  |line 602, col 32 to line 602, col 39 of module trash_single: 2017
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 603, col 32 to line 603, col 87 of module trash_single: 605
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 604, col 32 to line 604, col 78 of module trash_single: 605
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 605, col 32 to line 614, col 61 of module trash_single: 605
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2772:0 @!@!@
+<UserNextIteration line 618, col 1 to line 618, col 23 of module trash_single>: 122:141
+@!@!@ENDMSG 2772 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 618, col 31 to line 618, col 60 of module trash_single: 1147
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  |line 618, col 31 to line 618, col 38 of module trash_single: 1006
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 619, col 34 to line 619, col 46 of module trash_single: 141
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 620, col 39 to line 620, col 83 of module trash_single: 141
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 621, col 42 to line 621, col 83 of module trash_single: 0
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 622, col 31 to line 631, col 66 of module trash_single: 141
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2772:0 @!@!@
+<UserScanCard line 633, col 1 to line 633, col 18 of module trash_single>: 145:162
+@!@!@ENDMSG 2772 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 633, col 26 to line 633, col 50 of module trash_single: 1166
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  |line 633, col 26 to line 633, col 33 of module trash_single: 1004
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 634, col 26 to line 634, col 77 of module trash_single: 162
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 635, col 26 to line 635, col 76 of module trash_single: 162
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 636, col 26 to line 643, col 72 of module trash_single: 162
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2772:0 @!@!@
+<UserAwaitScanResponse line 645, col 1 to line 645, col 27 of module trash_single>: 20:25
+@!@!@ENDMSG 2772 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 645, col 35 to line 645, col 68 of module trash_single: 1027
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  |line 645, col 35 to line 645, col 42 of module trash_single: 1002
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 646, col 35 to line 646, col 53 of module trash_single: 232
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  |line 646, col 35 to line 646, col 45 of module trash_single: 207
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  |line 646, col 50 to line 646, col 53 of module trash_single: 207
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 647, col 35 to line 647, col 83 of module trash_single: 25
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 648, col 35 to line 648, col 66 of module trash_single: 25
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 649, col 35 to line 650, col 87 of module trash_single: 25
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 651, col 35 to line 652, col 87 of module trash_single: 25
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 653, col 38 to line 653, col 56 of module trash_single: 25
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 654, col 43 to line 654, col 87 of module trash_single: 25
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 655, col 46 to line 655, col 92 of module trash_single: 0
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 656, col 35 to line 665, col 81 of module trash_single: 25
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2772:0 @!@!@
+<UserOpenDoor line 667, col 1 to line 667, col 18 of module trash_single>: 23:25
+@!@!@ENDMSG 2772 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 667, col 26 to line 667, col 50 of module trash_single: 1026
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  |line 667, col 26 to line 667, col 33 of module trash_single: 1001
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 668, col 26 to line 668, col 87 of module trash_single: 25
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 669, col 26 to line 669, col 72 of module trash_single: 25
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 670, col 26 to line 677, col 72 of module trash_single: 25
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2772:0 @!@!@
+<UserAwaitOpenDoor line 679, col 1 to line 679, col 23 of module trash_single>: 29:33
+@!@!@ENDMSG 2772 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 679, col 31 to line 679, col 60 of module trash_single: 1033
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  |line 679, col 31 to line 679, col 38 of module trash_single: 1000
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 680, col 31 to line 680, col 61 of module trash_single: 114
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  |line 680, col 31 to line 680, col 48 of module trash_single: 81
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 681, col 31 to line 681, col 76 of module trash_single: 33
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 682, col 31 to line 691, col 66 of module trash_single: 33
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2772:0 @!@!@
+<UserDepositTrash line 693, col 1 to line 693, col 22 of module trash_single>: 29:33
+@!@!@ENDMSG 2772 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 693, col 30 to line 693, col 58 of module trash_single: 1032
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  |line 693, col 30 to line 693, col 37 of module trash_single: 999
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 694, col 30 to line 695, col 82 of module trash_single: 33
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 696, col 30 to line 696, col 52 of module trash_single: 33
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 697, col 30 to line 697, col 43 of module trash_single: 33
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 698, col 30 to line 698, col 72 of module trash_single: 33
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 699, col 30 to line 707, col 65 of module trash_single: 33
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2772:0 @!@!@
+<UserCloseDoor line 709, col 1 to line 709, col 19 of module trash_single>: 31:33
+@!@!@ENDMSG 2772 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 709, col 27 to line 709, col 52 of module trash_single: 1031
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  |line 709, col 27 to line 709, col 34 of module trash_single: 998
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 710, col 27 to line 710, col 89 of module trash_single: 33
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 711, col 27 to line 711, col 75 of module trash_single: 33
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 712, col 27 to line 719, col 73 of module trash_single: 33
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2772:0 @!@!@
+<UserAwaitClosedDoor line 721, col 1 to line 721, col 25 of module trash_single>: 68:107
+@!@!@ENDMSG 2772 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 721, col 33 to line 721, col 64 of module trash_single: 1104
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  |line 721, col 33 to line 721, col 40 of module trash_single: 997
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 722, col 33 to line 722, col 63 of module trash_single: 320
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  |line 722, col 33 to line 722, col 50 of module trash_single: 213
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 723, col 33 to line 723, col 79 of module trash_single: 107
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 724, col 33 to line 733, col 68 of module trash_single: 107
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2772:0 @!@!@
+<UserNewTrash line 735, col 1 to line 735, col 18 of module trash_single>: 196:222
+@!@!@ENDMSG 2772 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 735, col 26 to line 735, col 50 of module trash_single: 1107
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  |line 735, col 26 to line 735, col 33 of module trash_single: 996
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 737, col 28 to line 737, col 43 of module trash_single: 222
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 736, col 37 to line 736, col 51 of module trash_single: 111
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 738, col 26 to line 738, col 67 of module trash_single: 222
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 739, col 26 to line 746, col 72 of module trash_single: 222
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2772:0 @!@!@
+<ServerNextIteration line 754, col 1 to line 754, col 19 of module trash_single>: 8:477
+@!@!@ENDMSG 2772 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 754, col 27 to line 754, col 60 of module trash_single: 1501
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  |line 754, col 27 to line 754, col 36 of module trash_single: 1024
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 755, col 27 to line 755, col 76 of module trash_single: 477
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 756, col 27 to line 764, col 56 of module trash_single: 477
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2772:0 @!@!@
+<ServerAwaitRequest line 766, col 1 to line 766, col 18 of module trash_single>: 4:5
+@!@!@ENDMSG 2772 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 766, col 26 to line 766, col 58 of module trash_single: 1027
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  |line 766, col 26 to line 766, col 35 of module trash_single: 1022
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 767, col 26 to line 767, col 47 of module trash_single: 552
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  |line 767, col 26 to line 767, col 39 of module trash_single: 547
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  |line 767, col 44 to line 767, col 47 of module trash_single: 547
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 768, col 26 to line 768, col 53 of module trash_single: 5
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 769, col 26 to line 769, col 63 of module trash_single: 5
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 770, col 26 to line 771, col 116 of module trash_single: 5
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 772, col 26 to line 772, col 76 of module trash_single: 5
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 773, col 26 to line 780, col 55 of module trash_single: 5
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2772:0 @!@!@
+<TruckStart line 784, col 1 to line 784, col 16 of module trash_single>: 103:519
+@!@!@ENDMSG 2772 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 784, col 24 to line 784, col 46 of module trash_single: 1513
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  |line 784, col 24 to line 784, col 31 of module trash_single: 994
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 785, col 24 to line 785, col 64 of module trash_single: 519
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 786, col 24 to line 793, col 64 of module trash_single: 519
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2772:0 @!@!@
+<WaitRequest line 795, col 1 to line 795, col 17 of module trash_single>: 0:0
+@!@!@ENDMSG 2772 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 795, col 25 to line 795, col 48 of module trash_single: 993
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 796, col 25 to line 796, col 56 of module trash_single: 475
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 797, col 25 to line 797, col 61 of module trash_single: 0
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 798, col 25 to line 805, col 65 of module trash_single: 0
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2772:0 @!@!@
+<Arrived line 807, col 1 to line 807, col 13 of module trash_single>: 0:0
+@!@!@ENDMSG 2772 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 807, col 21 to line 807, col 40 of module trash_single: 993
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 808, col 21 to line 808, col 70 of module trash_single: 0
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 809, col 21 to line 809, col 58 of module trash_single: 0
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 810, col 21 to line 816, col 61 of module trash_single: 0
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2772:0 @!@!@
+<EmptyBin line 818, col 1 to line 818, col 14 of module trash_single>: 0:0
+@!@!@ENDMSG 2772 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 818, col 22 to line 818, col 42 of module trash_single: 993
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 819, col 22 to line 819, col 72 of module trash_single: 0
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 820, col 22 to line 820, col 63 of module trash_single: 0
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 821, col 22 to line 827, col 62 of module trash_single: 0
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2772:0 @!@!@
+<WaitEmptyBin line 829, col 1 to line 829, col 18 of module trash_single>: 0:0
+@!@!@ENDMSG 2772 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 829, col 26 to line 829, col 50 of module trash_single: 993
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 831, col 26 to line 831, col 62 of module trash_single: 0
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 832, col 26 to line 840, col 55 of module trash_single: 0
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2772:0 @!@!@
+<Emptied line 842, col 1 to line 842, col 13 of module trash_single>: 0:0
+@!@!@ENDMSG 2772 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 842, col 21 to line 842, col 40 of module trash_single: 993
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 843, col 21 to line 843, col 70 of module trash_single: 0
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 844, col 21 to line 844, col 60 of module trash_single: 0
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 845, col 21 to line 851, col 61 of module trash_single: 0
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2772:0 @!@!@
+<ControlStart line 857, col 1 to line 857, col 12 of module trash_single>: 2:25
+@!@!@ENDMSG 2772 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 857, col 20 to line 857, col 47 of module trash_single: 1046
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  |line 857, col 20 to line 857, col 30 of module trash_single: 1021
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 858, col 23 to line 858, col 73 of module trash_single: 25
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 859, col 31 to line 859, col 80 of module trash_single: 0
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 860, col 31 to line 860, col 52 of module trash_single: 0
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 861, col 31 to line 861, col 34 of module trash_single: 25
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 862, col 31 to line 862, col 74 of module trash_single: 25
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 863, col 20 to line 863, col 61 of module trash_single: 25
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 864, col 20 to line 870, col 44 of module trash_single: 25
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2772:0 @!@!@
+<WaitEvent line 872, col 1 to line 872, col 9 of module trash_single>: 7:9
+@!@!@ENDMSG 2772 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 872, col 17 to line 872, col 41 of module trash_single: 1029
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  |line 872, col 17 to line 872, col 27 of module trash_single: 1020
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 873, col 23 to line 873, col 72 of module trash_single: 28
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 874, col 23 to line 874, col 45 of module trash_single: 0
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 875, col 23 to line 875, col 67 of module trash_single: 0
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 876, col 23 to line 876, col 62 of module trash_single: 0
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 877, col 23 to line 877, col 75 of module trash_single: 37
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  |line 877, col 25 to line 877, col 74 of module trash_single: 28
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 878, col 23 to line 878, col 35 of module trash_single: 37
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  |line 878, col 23 to line 878, col 27 of module trash_single: 28
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  |line 878, col 32 to line 878, col 35 of module trash_single: 28
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 879, col 23 to line 879, col 40 of module trash_single: 9
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 880, col 23 to line 880, col 42 of module trash_single: 9
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 881, col 23 to line 881, col 86 of module trash_single: 9
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 882, col 23 to line 882, col 65 of module trash_single: 9
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 883, col 23 to line 883, col 46 of module trash_single: 9
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 884, col 17 to line 889, col 48 of module trash_single: 9
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2772:0 @!@!@
+<WaitServer line 891, col 1 to line 891, col 10 of module trash_single>: 7:9
+@!@!@ENDMSG 2772 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 891, col 18 to line 891, col 43 of module trash_single: 1028
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  |line 891, col 18 to line 891, col 28 of module trash_single: 1019
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 892, col 18 to line 892, col 40 of module trash_single: 26
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  |line 892, col 18 to line 892, col 32 of module trash_single: 17
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  |line 892, col 37 to line 892, col 40 of module trash_single: 17
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 893, col 18 to line 893, col 46 of module trash_single: 9
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 894, col 18 to line 894, col 57 of module trash_single: 9
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 895, col 18 to line 895, col 65 of module trash_single: 9
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 896, col 18 to line 901, col 81 of module trash_single: 9
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2772:0 @!@!@
+<CheckPermission line 903, col 1 to line 903, col 15 of module trash_single>: 6:9
+@!@!@ENDMSG 2772 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 903, col 23 to line 903, col 53 of module trash_single: 1027
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  |line 903, col 23 to line 903, col 33 of module trash_single: 1018
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 904, col 26 to line 904, col 94 of module trash_single: 9
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 905, col 34 to line 905, col 95 of module trash_single: 9
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 906, col 34 to line 906, col 80 of module trash_single: 9
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 907, col 34 to line 907, col 54 of module trash_single: 9
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 908, col 34 to line 908, col 126 of module trash_single: 0
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 909, col 34 to line 909, col 78 of module trash_single: 0
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 910, col 34 to line 910, col 53 of module trash_single: 0
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 911, col 23 to line 918, col 52 of module trash_single: 9
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2772:0 @!@!@
+<WaitUserUnlock line 920, col 1 to line 920, col 14 of module trash_single>: 21:25
+@!@!@ENDMSG 2772 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 920, col 22 to line 920, col 51 of module trash_single: 1042
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  |line 920, col 22 to line 920, col 32 of module trash_single: 1017
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 921, col 22 to line 921, col 52 of module trash_single: 85
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  |line 921, col 22 to line 921, col 39 of module trash_single: 60
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 922, col 22 to line 922, col 83 of module trash_single: 25
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 923, col 22 to line 923, col 113 of module trash_single: 25
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 924, col 22 to line 924, col 67 of module trash_single: 25
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 925, col 22 to line 931, col 62 of module trash_single: 25
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2772:0 @!@!@
+<WaitDoorClose line 933, col 1 to line 933, col 13 of module trash_single>: 36:162
+@!@!@ENDMSG 2772 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 933, col 21 to line 933, col 49 of module trash_single: 1178
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  |line 933, col 21 to line 933, col 31 of module trash_single: 1016
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 934, col 21 to line 934, col 58 of module trash_single: 641
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  |line 934, col 21 to line 934, col 36 of module trash_single: 479
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 934, col 63 to line 934, col 93 of module trash_single: 348
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  |line 934, col 63 to line 934, col 80 of module trash_single: 186
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 935, col 21 to line 935, col 52 of module trash_single: 162
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 936, col 21 to line 936, col 83 of module trash_single: 162
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 937, col 21 to line 937, col 66 of module trash_single: 162
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 938, col 21 to line 944, col 50 of module trash_single: 162
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2772:0 @!@!@
+<LockOuterDoor line 946, col 1 to line 946, col 13 of module trash_single>: 49:138
+@!@!@ENDMSG 2772 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 946, col 21 to line 946, col 49 of module trash_single: 1154
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  |line 946, col 21 to line 946, col 31 of module trash_single: 1016
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 947, col 21 to line 947, col 83 of module trash_single: 138
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 948, col 21 to line 948, col 70 of module trash_single: 138
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 949, col 21 to line 955, col 61 of module trash_single: 138
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2772:0 @!@!@
+<WaitLockOuterDoor line 957, col 1 to line 957, col 17 of module trash_single>: 40:58
+@!@!@ENDMSG 2772 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 957, col 25 to line 957, col 57 of module trash_single: 1074
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  |line 957, col 25 to line 957, col 35 of module trash_single: 1016
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 958, col 25 to line 958, col 55 of module trash_single: 291
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  |line 958, col 25 to line 958, col 42 of module trash_single: 233
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 959, col 25 to line 959, col 69 of module trash_single: 58
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 960, col 25 to line 967, col 65 of module trash_single: 58
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2772:0 @!@!@
+<OpenTrapDoor line 969, col 1 to line 969, col 12 of module trash_single>: 24:26
+@!@!@ENDMSG 2772 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 969, col 20 to line 969, col 47 of module trash_single: 1042
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  |line 969, col 20 to line 969, col 30 of module trash_single: 1016
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 970, col 20 to line 970, col 80 of module trash_single: 26
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 971, col 20 to line 971, col 64 of module trash_single: 26
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 972, col 20 to line 978, col 55 of module trash_single: 26
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2772:0 @!@!@
+<WaitOpenTrap line 980, col 1 to line 980, col 12 of module trash_single>: 0:0
+@!@!@ENDMSG 2772 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 980, col 20 to line 980, col 47 of module trash_single: 1016
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 981, col 20 to line 981, col 50 of module trash_single: 6
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 982, col 20 to line 982, col 61 of module trash_single: 0
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 983, col 20 to line 989, col 72 of module trash_single: 0
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2772:0 @!@!@
+<ExtendRam line 991, col 1 to line 991, col 9 of module trash_single>: 0:0
+@!@!@ENDMSG 2772 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 991, col 17 to line 991, col 41 of module trash_single: 1016
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 992, col 17 to line 992, col 71 of module trash_single: 0
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 993, col 17 to line 993, col 62 of module trash_single: 0
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 994, col 17 to line 1000, col 46 of module trash_single: 0
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2772:0 @!@!@
+<WaitExtendRam line 1002, col 1 to line 1002, col 13 of module trash_single>: 0:0
+@!@!@ENDMSG 2772 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 1002, col 21 to line 1002, col 49 of module trash_single: 1016
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 1004, col 21 to line 1004, col 63 of module trash_single: 0
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 1005, col 21 to line 1012, col 50 of module trash_single: 0
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2772:0 @!@!@
+<RetractRam line 1014, col 1 to line 1014, col 10 of module trash_single>: 0:0
+@!@!@ENDMSG 2772 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 1014, col 18 to line 1014, col 43 of module trash_single: 1016
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 1015, col 18 to line 1015, col 73 of module trash_single: 0
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 1016, col 18 to line 1016, col 64 of module trash_single: 0
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 1017, col 18 to line 1023, col 47 of module trash_single: 0
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2772:0 @!@!@
+<WaitRetractRam line 1025, col 1 to line 1025, col 14 of module trash_single>: 0:0
+@!@!@ENDMSG 2772 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 1025, col 22 to line 1025, col 51 of module trash_single: 1016
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 1027, col 22 to line 1027, col 67 of module trash_single: 0
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 1028, col 22 to line 1035, col 62 of module trash_single: 0
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2772:0 @!@!@
+<CloseTrapDoor line 1037, col 1 to line 1037, col 13 of module trash_single>: 0:0
+@!@!@ENDMSG 2772 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 1037, col 21 to line 1037, col 49 of module trash_single: 1016
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 1038, col 21 to line 1038, col 82 of module trash_single: 0
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 1039, col 21 to line 1039, col 66 of module trash_single: 0
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 1040, col 21 to line 1046, col 61 of module trash_single: 0
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2772:0 @!@!@
+<WaitCloseTrap line 1048, col 1 to line 1048, col 13 of module trash_single>: 0:0
+@!@!@ENDMSG 2772 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 1048, col 21 to line 1048, col 49 of module trash_single: 1016
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 1050, col 21 to line 1050, col 65 of module trash_single: 0
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 1051, col 21 to line 1058, col 50 of module trash_single: 0
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2774:0 @!@!@
+<TypeOK line 405, col 1 to line 405, col 6 of module trash_single>
+@!@!@ENDMSG 2774 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 405, col 11 to line 431, col 38 of module trash_single: 1204
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  |line 405, col 14 to line 405, col 38 of module trash_single: 1204
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  |line 406, col 14 to line 406, col 40 of module trash_single: 1204
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  |line 407, col 14 to line 407, col 37 of module trash_single: 1204
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  |line 408, col 14 to line 408, col 36 of module trash_single: 1204
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  |line 409, col 14 to line 409, col 31 of module trash_single: 1204
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  |line 410, col 14 to line 410, col 36 of module trash_single: 1204
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  |line 411, col 14 to line 411, col 38 of module trash_single: 1204
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  |line 412, col 14 to line 412, col 34 of module trash_single: 1204
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  |line 413, col 14 to line 413, col 38 of module trash_single: 1204
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  |line 414, col 14 to line 414, col 46 of module trash_single: 1204
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  |line 415, col 14 to line 415, col 40 of module trash_single: 1204
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  |line 416, col 14 to line 416, col 43 of module trash_single: 1204
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  |line 417, col 14 to line 417, col 30 of module trash_single: 1204
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  |line 418, col 14 to line 420, col 41 of module trash_single: 1204
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  ||line 419, col 16 to line 420, col 41 of module trash_single: 160
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  ||line 418, col 23 to line 418, col 35 of module trash_single: 1204
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  |line 421, col 14 to line 424, col 52 of module trash_single: 1204
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  ||line 422, col 16 to line 424, col 52 of module trash_single: 24
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  ||line 421, col 23 to line 421, col 41 of module trash_single: 1204
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  |line 425, col 14 to line 426, col 50 of module trash_single: 1204
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  ||line 426, col 16 to line 426, col 50 of module trash_single: 8
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  ||line 425, col 23 to line 425, col 44 of module trash_single: 1204
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  |line 427, col 14 to line 429, col 59 of module trash_single: 1204
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  ||line 428, col 16 to line 429, col 59 of module trash_single: 8
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  ||line 427, col 23 to line 427, col 45 of module trash_single: 1204
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  |line 430, col 14 to line 430, col 50 of module trash_single: 1204
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  |line 431, col 14 to line 431, col 38 of module trash_single: 1204
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2774:0 @!@!@
+<MessagesOK line 434, col 1 to line 434, col 10 of module trash_single>
+@!@!@ENDMSG 2774 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 434, col 15 to line 437, col 42 of module trash_single: 1204
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2202:0 @!@!@
+End of statistics.
+@!@!@ENDMSG 2202 @!@!@
+@!@!@STARTMSG 2200:0 @!@!@
+Progress(30) at 2026-10-19 16:58:49: 3.160 states generated (63.645 s/min), 1.204 distinct states found (24.249 ds/min), 207 states left on queue.
+@!@!@ENDMSG 2200 @!@!@
+@!@!@STARTMSG 2199:0 @!@!@
+3160 states generated, 1204 distinct states found, 207 states left on queue.
+@!@!@ENDMSG 2199 @!@!@
+@!@!@STARTMSG 2194:0 @!@!@
+The depth of the complete state graph search is 30.
+@!@!@ENDMSG 2194 @!@!@
+@!@!@STARTMSG 2268:0 @!@!@
+The average outdegree of the complete state graph is 1 (minimum is 0, the maximum 4 and the 95th percentile is 2).
+@!@!@ENDMSG 2268 @!@!@
+@!@!@STARTMSG 2186:0 @!@!@
+Finished in 2988ms at (2026-10-19 16:58:49)
+@!@!@ENDMSG 2186 @!@!@
